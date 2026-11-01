@@ -1800,6 +1800,7 @@
         .story-modal-left h2 { font-size: 2rem; }
     }
 </style>
+    <link rel="stylesheet" href="assets/ecommerce.css">
 </head>
 <body>
 <div id="flp-app-wrapper">
@@ -1832,6 +1833,15 @@
                 <div class="nav-item"><a href="#contact">Contact</a></div>
             </div>
             <div class="nav-actions" style="display: flex; align-items: center; gap: 12px;">
+                <button onclick="toggleCartDrawer()" class="cart-nav-btn" aria-label="Open Shopping Cart" title="View Cart">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-text">Cart</span>
+                    <span class="cart-badge" id="cartCountBadge">0</span>
+                </button>
                 <button onclick="toggleModal()" class="btn btn-primary nav-join-btn">Join our magic</button>
                 <button class="burger-btn" id="burgerBtn" onclick="toggleMobileNav()" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span class="burger-line line-1"></span>
@@ -1856,6 +1866,11 @@
             <a href="#hero" class="mobile-nav-link" onclick="closeMobileNav()">
                 <span class="mobile-nav-icon">🏠</span>
                 <span>Home</span>
+            </a>
+
+            <a href="javascript:void(0)" class="mobile-nav-link" onclick="openCartFromMobile()">
+                <span class="mobile-nav-icon">🛍️</span>
+                <span>Shopping Cart (<span id="mobileCartCount">0</span>)</span>
             </a>
 
             <!-- Our Story Mobile Accordion -->
@@ -2219,7 +2234,10 @@
                         <img decoding="async" src="assets/Floating_Clouds.png" alt="Floating Clouds" class="heading-clouds-left skip-lazy" style="left: -20px;" loading="eager" data-no-lazy="1">
                         <h2 style="color: var(--text-dark); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 8px; position: relative; z-index: 2;">Our books</h2>
                         <p style="color: var(--text-gray); position: relative; z-index: 2; font-size: 1.1rem; line-height: 1.7;">Read our books and unlock your imagination</p>
-                        <a href="https://forlittlepeople.co.za/product/book-one/" target="_blank" class="btn btn-primary" style="margin-top: 24px; position: relative; z-index: 2;">Order Now</a>
+                        <button onclick="openCartDrawer()" class="btn btn-primary" style="margin-top: 24px; position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 8px;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                            <span>View Cart &amp; Shop</span>
+                        </button>
                     </div>
                     <div class="gallery-grid" style="flex: 1; min-width: 300px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; position: relative; z-index: 10;">
                         <!-- Book 1: The Perfect Christmas (First on the left) -->
@@ -2632,7 +2650,15 @@
                 <p style="font-weight: 500; color: #d87659; font-size: 1.25rem; margin-top: 32px; line-height: 1.6;">
                     Because to Layla, different doesn't mean better or worse - it simply means unique.
                 </p>
-                <a href="https://forlittlepeople.co.za/product/book-one/" target="_blank" class="btn btn-primary" style="margin-top: 24px;">Order Now</a>
+                
+                <div class="book-modal-pricing-box">
+                    <div class="book-price-tag">R 160.00</div>
+                    <span class="book-stock-pill">In Stock • Fast SA Delivery</span>
+                </div>
+                <div class="book-modal-actions">
+                    <button class="btn btn-primary btn-buy-now" onclick="buyNow('i-am-beautiful')">Buy Now</button>
+                    <button class="btn btn-secondary btn-add-to-cart" onclick="addToCart('i-am-beautiful', 1, true)">Add to Cart</button>
+                </div>
             </div>
             <div class="story-modal-right">
                 <div class="story-arch book1-arch">
@@ -2650,7 +2676,15 @@
                 <h2>The Story of a Hundred Dresses</h2>
                 <p class="lead">Story of a hundred dresses: This vibrant, interactive book follows Layla as she plays with her animal friends.</p>
                 <p>Designed to engage young readers, it blends early learning with cultural discovery by using the unique patterns and colours of five traditional tribes to teach teaching counting and visual recognition. As children turn the pages, they don't just learn their 123s; they explore the rich heritage of the South African people through beautiful, cultural illustrations.</p>
-                <a href="https://forlittlepeople.co.za/product/the-story-of-a-hundred-dresses/" target="_blank" class="btn btn-primary" style="margin-top: 24px;">Order Now</a>
+                
+                <div class="book-modal-pricing-box">
+                    <div class="book-price-tag">R 160.00</div>
+                    <span class="book-stock-pill">In Stock • Fast SA Delivery</span>
+                </div>
+                <div class="book-modal-actions">
+                    <button class="btn btn-primary btn-buy-now" onclick="buyNow('the-hundred-dresses')">Buy Now</button>
+                    <button class="btn btn-secondary btn-add-to-cart" onclick="addToCart('the-hundred-dresses', 1, true)">Add to Cart</button>
+                </div>
             </div>
             <div class="story-modal-right">
                 <div class="story-arch book2-arch">
@@ -2672,7 +2706,15 @@
                 <p style="font-weight: 500; color: #d87659; font-size: 1.25rem; margin-top: 32px; line-height: 1.6;">
                     "A buzzing tale about finding joy within!"
                 </p>
-                <a href="https://forlittlepeople.co.za/product/the-story-of-bumble-the-bee/" target="_blank" class="btn btn-primary" style="margin-top: 24px;">Order Now</a>
+                
+                <div class="book-modal-pricing-box">
+                    <div class="book-price-tag">R 160.00</div>
+                    <span class="book-stock-pill">In Stock • Fast SA Delivery</span>
+                </div>
+                <div class="book-modal-actions">
+                    <button class="btn btn-primary btn-buy-now" onclick="buyNow('bumble-the-bee')">Buy Now</button>
+                    <button class="btn btn-secondary btn-add-to-cart" onclick="addToCart('bumble-the-bee', 1, true)">Add to Cart</button>
+                </div>
             </div>
             <div class="story-modal-right">
                 <div class="story-arch book3-arch">
@@ -2695,7 +2737,15 @@
                 <p style="font-weight: 500; color: #d87659; font-size: 1.15rem; margin-top: 24px; line-height: 1.6;">
                     A delightful festive story that encourages children to appreciate their own family traditions while embracing the beautiful differences that make every Christmas special.
                 </p>
-                <a href="https://forlittlepeople.co.za/product/the-perfect-christmas/" target="_blank" class="btn btn-primary" style="margin-top: 24px;">Order Now</a>
+                
+                <div class="book-modal-pricing-box">
+                    <div class="book-price-tag">R 160.00</div>
+                    <span class="book-stock-pill">In Stock • Fast SA Delivery</span>
+                </div>
+                <div class="book-modal-actions">
+                    <button class="btn btn-primary btn-buy-now" onclick="buyNow('the-perfect-christmas')">Buy Now</button>
+                    <button class="btn btn-secondary btn-add-to-cart" onclick="addToCart('the-perfect-christmas', 1, true)">Add to Cart</button>
+                </div>
             </div>
             <div class="story-modal-right">
                 <div class="story-arch book4-arch">
@@ -2719,7 +2769,15 @@
                 <p style="font-weight: 500; color: #2a82b5; font-size: 1.15rem; margin-top: 24px; line-height: 1.6;">
                     A breathtaking ocean adventure that encourages children to explore fearlessly, care for our oceans, and discover the wonder within our world.
                 </p>
-                <a href="https://forlittlepeople.co.za/product/hosi-and-the-whales/" target="_blank" class="btn btn-primary" style="margin-top: 24px;">Order Now</a>
+                
+                <div class="book-modal-pricing-box">
+                    <div class="book-price-tag">R 160.00</div>
+                    <span class="book-stock-pill">In Stock • Fast SA Delivery</span>
+                </div>
+                <div class="book-modal-actions">
+                    <button class="btn btn-primary btn-buy-now" onclick="buyNow('hosi-and-the-whales')">Buy Now</button>
+                    <button class="btn btn-secondary btn-add-to-cart" onclick="addToCart('hosi-and-the-whales', 1, true)">Add to Cart</button>
+                </div>
             </div>
             <div class="story-modal-right">
                 <div class="story-arch book5-arch">
@@ -3175,5 +3233,181 @@
 
     </script>
 </div>
+
+    <!-- Floating Mobile Quick-Cart Button -->
+    <button id="floatingCartBtn" class="floating-cart-btn" onclick="toggleCartDrawer()" aria-label="View Shopping Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span>Cart</span>
+        <span class="floating-cart-count" id="floatingCartCount">0</span>
+    </button>
+
+    <!-- Cart Drawer Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCartDrawer()"></div>
+
+    <!-- Cart Slide-Over Drawer -->
+    <div class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart">
+        <!-- Standard Cart View -->
+        <div id="cartStandardView" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="cart-drawer-header">
+                <h3 class="cart-drawer-title">
+                    <span>🛍️ Your Cart</span>
+                </h3>
+                <button class="cart-drawer-close" onclick="closeCartDrawer()" aria-label="Close cart">&times;</button>
+            </div>
+
+            <!-- Free Shipping Threshold Progress -->
+            <div class="cart-free-shipping-banner">
+                <span id="freeShippingText">🚚 <strong>Nationwide Courier Delivery:</strong> Free on orders over R 400.00!</span>
+                <div class="shipping-progress-track">
+                    <div class="shipping-progress-bar" id="freeShippingProgressBar" style="width: 0%;"></div>
+                </div>
+            </div>
+
+            <!-- Cart Items List -->
+            <div class="cart-drawer-body" id="cartItemsList">
+                <!-- Dynamically populated by assets/ecommerce.js -->
+            </div>
+
+            <!-- Cart Summary & Checkout Button -->
+            <div class="cart-drawer-footer">
+                <div class="cart-summary-row">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal" style="font-weight: 600;">R 0.00</span>
+                </div>
+                <div class="cart-summary-row">
+                    <span>Nationwide Courier Delivery</span>
+                    <span id="cartShipping">R 75.00</span>
+                </div>
+                <div class="cart-summary-total">
+                    <span>Total (ZAR)</span>
+                    <span id="cartTotal" style="color: #d87659;">R 0.00</span>
+                </div>
+                <button class="cart-checkout-btn" id="cartCheckoutBtn" onclick="showCheckoutView()">
+                    <span>Proceed to Checkout</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+                <div class="payfast-trust-badges">
+                    <span>🔒 Secured by PayFast • Instant EFT, Cards, Capitec Pay</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Checkout Form View -->
+        <div id="cartCheckoutView" class="checkout-view">
+            <div class="cart-drawer-header">
+                <button class="cart-drawer-close" onclick="showCartView()" title="Back to Cart" style="font-size: 0.95rem; width: auto; height: auto; padding: 6px 14px; border-radius: 999px;">
+                    ← Back to Cart
+                </button>
+                <h3 class="cart-drawer-title" style="font-size: 1.05rem;">
+                    <span>Delivery &amp; Pay</span>
+                </h3>
+                <button class="cart-drawer-close" onclick="closeCartDrawer()" aria-label="Close">&times;</button>
+            </div>
+
+            <div class="cart-drawer-body" style="padding-top: 10px;">
+                <div style="background: #eef7f3; border: 1px solid #c8e7d7; border-radius: 12px; padding: 12px 16px; font-size: 0.9rem; color: #1e6b47; display: flex; align-items: center; justify-content: space-between;">
+                    <span>Total Payable:</span>
+                    <strong id="checkoutTotalDisplay" style="font-size: 1.25rem; color: #2d2a26;">R 0.00</strong>
+                </div>
+
+                <form id="payfastCustomerForm" class="checkout-form" onsubmit="processPayFastCheckout(event)">
+                    <div class="checkout-row-2">
+                        <div class="checkout-form-group">
+                            <label>First Name <span>*</span></label>
+                            <input type="text" id="custFirstName" class="checkout-input" placeholder="e.g. Thabisile" required>
+                        </div>
+                        <div class="checkout-form-group">
+                            <label>Last Name <span>*</span></label>
+                            <input type="text" id="custLastName" class="checkout-input" placeholder="e.g. Sambo" required>
+                        </div>
+                    </div>
+
+                    <div class="checkout-form-group">
+                        <label>Email Address <span>*</span></label>
+                        <input type="email" id="custEmail" class="checkout-input" placeholder="for order updates & receipt" required>
+                    </div>
+
+                    <div class="checkout-form-group">
+                        <label>Mobile Number (for Courier SMS) <span>*</span></label>
+                        <input type="tel" id="custPhone" class="checkout-input" placeholder="e.g. 082 123 4567" required>
+                    </div>
+
+                    <div class="checkout-form-group">
+                        <label>Street Address <span>*</span></label>
+                        <input type="text" id="custAddress" class="checkout-input" placeholder="Street name and house/flat number" required>
+                    </div>
+
+                    <div class="checkout-row-2">
+                        <div class="checkout-form-group">
+                            <label>Suburb <span>*</span></label>
+                            <input type="text" id="custSuburb" class="checkout-input" placeholder="e.g. Sandton" required>
+                        </div>
+                        <div class="checkout-form-group">
+                            <label>City <span>*</span></label>
+                            <input type="text" id="custCity" class="checkout-input" placeholder="e.g. Johannesburg" required>
+                        </div>
+                    </div>
+
+                    <div class="checkout-row-2">
+                        <div class="checkout-form-group">
+                            <label>Province <span>*</span></label>
+                            <select id="custProvince" class="checkout-select" required>
+                                <option value="">Select Province</option>
+                                <option value="Gauteng">Gauteng</option>
+                                <option value="Western Cape">Western Cape</option>
+                                <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+                                <option value="Eastern Cape">Eastern Cape</option>
+                                <option value="Free State">Free State</option>
+                                <option value="Limpopo">Limpopo</option>
+                                <option value="Mpumalanga">Mpumalanga</option>
+                                <option value="North West">North West</option>
+                                <option value="Northern Cape">Northern Cape</option>
+                            </select>
+                        </div>
+                        <div class="checkout-form-group">
+                            <label>Postal Code <span>*</span></label>
+                            <input type="text" id="custPostalCode" class="checkout-input" placeholder="e.g. 2196" required>
+                        </div>
+                    </div>
+
+                    <div class="checkout-form-group">
+                        <label>Delivery Instructions (Optional)</label>
+                        <input type="text" id="custNotes" class="checkout-input" placeholder="e.g. Leave with gate security">
+                    </div>
+
+                    <button type="submit" id="payfastSubmitBtn" class="cart-checkout-btn" style="margin-top: 10px;">
+                        <span>Pay with PayFast 🔒</span>
+                    </button>
+                </form>
+                <div style="font-size: 0.78rem; text-align: center; color: #8b8379; margin-top: 8px;">
+                    You will be securely redirected to PayFast's official payment page to choose Instant EFT, Card, or Capitec Pay.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Confirmation Modal -->
+    <div class="order-success-modal" id="orderSuccessModal">
+        <div class="order-success-card">
+            <div class="order-success-icon">✓</div>
+            <h2 style="font-size: 1.8rem; color: #2d2a26; margin-bottom: 8px; font-weight: 700;">Order Confirmed!</h2>
+            <p style="color: #615a51; font-size: 1rem; line-height: 1.6;">
+                Thank you for your order! Your payment was successful and we are preparing your books for courier delivery.
+            </p>
+            <div style="margin: 16px 0; font-size: 0.95rem; color: #2d2a26;">
+                <strong>Order Reference:</strong> <span id="successOrderNumber" style="color: #d87659; font-weight: 700;">FLP-</span>
+            </div>
+            <div id="successOrderSummary"></div>
+            <button class="btn btn-primary" onclick="closeSuccessModal()" style="width: 100%; margin-top: 10px;">Continue Browsing</button>
+        </div>
+    </div>
+
+    <!-- E-Commerce & PayFast Scripts -->
+    <script src="assets/ecommerce.js" defer></script>
+
 </body>
 </html>

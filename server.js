@@ -38,6 +38,17 @@ const COMPRESSIBLE_TYPES = [
 
 const server = http.createServer((req, res) => {
   try {
+    // PayFast ITN (Instant Transaction Notification) Listener
+    if (req.method === 'POST' && req.url.startsWith('/api/payfast-notify')) {
+      let body = '';
+      req.on('data', chunk => body += chunk);
+      req.on('end', () => {
+        console.log('[PayFast ITN Received]:', body);
+        res.writeHead(200, { 'Content-Type': 'text/plain' });
+        res.end('OK');
+      });
+      return;
+    }
     const parsedUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
     let reqPath = decodeURIComponent(parsedUrl.pathname);
 
