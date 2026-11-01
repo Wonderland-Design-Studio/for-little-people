@@ -1,0 +1,13 @@
+{
+  "name": "for-little-people",
+  "version": "1.0.0",
+  "description": "For Little People – A South African publisher celebrating the magic of childhood",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

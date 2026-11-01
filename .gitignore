@@ -1,0 +1,14 @@
+# Temporary scratch files and cpanel build archives
+scratch/
+cpanel_dist/
+*.zip
+
+# System & OS files
+Thumbs.db
+.DS_Store
+
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

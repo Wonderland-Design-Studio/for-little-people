@@ -1,0 +1,64 @@
+# ----------------------------------------------------------------------
+# For Little People - cPanel Production .htaccess
+# ----------------------------------------------------------------------
+
+# 1. UTF-8 Encoding
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .css .js .json .svg
+
+# 2. Proper MIME Types
+<IfModule mod_mime.c>
+    AddType video/mp4 .mp4
+    AddType image/webp .webp
+    AddType image/svg+xml .svg .svgz
+    AddType font/woff2 .woff2
+    AddType font/woff .woff
+</IfModule>
+
+# 3. Gzip / Deflate Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+    AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE application/json application/xml application/xhtml+xml
+    AddOutputFilterByType DEFLATE image/svg+xml font/ttf font/otf
+</IfModule>
+
+# 4. Browser Caching (Cache-Control & Expires)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # HTML - short cache for fresh updates
+    ExpiresByType text/html "access plus 1 hour"
+
+    # Media & Images - 1 year cache
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType video/mp4 "access plus 1 year"
+
+    # Fonts
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+    # Security Headers
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # Cache Control for static media
+    <FilesMatch "\.(ico|jpe?g|png|gif|webp|svg|mp4|woff2?)$">
+        Header set Cache-Control "max-age=31536000, public, immutable"
+    </FilesMatch>
+    
+    <FilesMatch "\.(html)$">
+        Header set Cache-Control "max-age=3600, must-revalidate, public"
+    </FilesMatch>
+</IfModule>
+
+# 5. Enable HTTP Byte-Ranges (Video Streaming for hero & animations)
+<IfModule mod_headers.c>
+    Header set Accept-Ranges bytes
+</IfModule>

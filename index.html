@@ -1,0 +1,3179 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>For Little People</title>
+    <meta name="description" content="We are here for the little people with big dreams. Fostering creativity, kindness, and independence from an early age.">
+    <meta name="theme-color" content="#fbc4d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    
+    <!-- Preconnect & Preload Critical Resources for Maximum Speed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="dns-prefetch" href="https://www.youtube.com">
+    <link rel="dns-prefetch" href="https://i.ytimg.com">
+    
+    <!-- Above-The-Fold Preloads -->
+    <link rel="preload" as="image" href="assets/final-logo-Trademark-.png">
+    <link rel="preload" as="image" href="assets/christmas-characters.png">
+
+    <link rel="icon" href="assets/cropped-final-logo-Trademark--32x32.png" sizes="32x32" />
+    <link rel="icon" href="assets/cropped-final-logo-Trademark--192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="assets/cropped-final-logo-Trademark--180x180.png" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+            background-color: #F8F9FA;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        /* Mobile Touch & Tap Latency Optimization */
+        button, a, .hero-dot-btn, .hero-arrow-btn, .gallery-item, .story-card, .mobile-accordion-toggle {
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Content Visibility for Instant First Contentful Paint */
+        #our-story, #core-pillars, #our-animations, #our-news, footer {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 700px;
+        }
+
+        /* Hardware Acceleration for Smooth Animations */
+        .hero-christmas-chars, .hero-layla, .hero-bee, .floating-decor, .hero-video-box {
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+        }
+    </style>
+    <style>
+
+    :root {
+        --primary-yellow: #FFCB05;
+        --primary-yellow-hover: #E5B600;
+        --text-dark: #1A1A1A;
+        --text-gray: #444444;
+        --bg-light: #F8F9FA;
+        --bg-white: #FFFFFF;
+        --border-radius-lg: 24px;
+        --border-radius-md: 16px;
+        --border-radius-pill: 50px;
+        --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-bouncy: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        --nav-height: 180px;
+    }
+
+    /* WordPress Full-Width Breakout Wrapper */
+    #flp-app-wrapper {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin-left: calc(-50vw + 50%) !important;
+        margin-right: calc(-50vw + 50%) !important;
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+        background-color: var(--bg-light);
+        font-family: 'Poppins', sans-serif;
+        color: var(--text-dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+        text-align: left;
+        box-sizing: border-box;
+    }
+
+    /* Safe reset scoped to wrapper to prevent WP theme styles from leaking, 
+       without breaking our own margin utilities */
+    #flp-app-wrapper *,
+    #flp-app-wrapper *::before,
+    #flp-app-wrapper *::after {
+        box-sizing: border-box !important;
+    }
+    
+    #flp-app-wrapper h1, #flp-app-wrapper h2, #flp-app-wrapper h3, #flp-app-wrapper h4, #flp-app-wrapper p {
+        margin-top: 0; /* Prevents WP from injecting massive top gaps */
+    }
+
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: var(--nav-height);
+    }
+
+    #flp-app-wrapper a {
+        text-decoration: none !important;
+        color: inherit;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4 {
+        font-weight: 700;
+        line-height: 1.2;
+        color: var(--text-dark);
+    }
+
+    h2 {
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        color: var(--text-gray);
+    }
+
+    /* --- NAV --- */
+    #flp-app-wrapper nav {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        transform: none !important;
+        height: var(--nav-height);
+        background-color: rgba(255, 255, 255, 0.5); 
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        transition: var(--transition);
+    }
+
+    /* Boost Specificity for layout containers to override WP themes */
+    #flp-app-wrapper .container,
+    #flp-app-wrapper .nav-container {
+        width: 100% !important;
+        max-width: 1280px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+
+    #flp-app-wrapper .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    #flp-app-wrapper .container {
+        position: relative;
+        z-index: 3;
+    }
+
+    /* Logo Styles */
+    .logo {
+        display: flex;
+        align-items: center;
+        height: 160px;
+        text-decoration: none;
+        transition: var(--transition-bouncy);
+    }
+
+    .logo:hover {
+        transform: scale(1.05) rotate(-2deg);
+    }
+
+    .logo img {
+        height: 100%;
+        width: auto;
+        display: block;
+        object-fit: contain;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .nav-item {
+        position: relative;
+        padding: 20px 8px;
+    }
+
+    #flp-app-wrapper .nav-item > a {
+        font-weight: 500 !important;
+        font-size: 1rem !important; 
+        padding: 10px 24px !important; 
+        border-radius: var(--border-radius-pill) !important;
+        transition: var(--transition-bouncy);
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+    }
+
+    .nav-item:hover > a {
+        background-color: #fbc4d4;
+        color: var(--text-dark);
+        transform: translateY(-2px);
+    }
+
+    /* Dropdown Navigation */
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        min-width: 220px;
+        border-radius: var(--border-radius-md);
+        box-shadow: var(--shadow-md);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition-bouncy);
+        z-index: 1001;
+        padding: 12px 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-item:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    .dropdown-menu span {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text-dark);
+        cursor: pointer;
+        transition: background-color 0.2s, color 0.2s, padding-left 0.2s;
+        text-align: center;
+    }
+
+    .dropdown-menu span:hover {
+        background-color: #fbc4d4;
+        color: var(--text-dark);
+    }
+
+    .nav-actions {
+        display: flex;
+        gap: 12px;
+    }
+
+    /* --- BUTTONS ---
+       Immunized with !important to prevent WP themes from squishing them */
+    #flp-app-wrapper .btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 14px 32px !important; 
+        border-radius: var(--border-radius-pill) !important;
+        font-weight: 600 !important;
+        font-size: 1rem !important; 
+        line-height: 1.5 !important;
+        height: auto !important;
+        min-height: 48px !important;
+        width: auto !important;
+        max-width: none !important;
+        white-space: nowrap !important;
+        text-transform: none !important; /* Blocks WordPress uppercase themes */
+        cursor: pointer !important;
+        transition: var(--transition-bouncy) !important;
+        border: none !important;
+        box-shadow: none;
+        text-align: center !important;
+        box-sizing: border-box !important;
+    }
+
+    #flp-app-wrapper .btn:hover {
+        transform: translateY(-4px) scale(1.05) !important;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    #flp-app-wrapper .btn:active {
+        transform: translateY(1px) scale(0.98) !important;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    #flp-app-wrapper .btn-primary { background-color: var(--primary-yellow) !important; color: var(--text-dark) !important; }
+    #flp-app-wrapper .btn-primary:hover { background-color: var(--primary-yellow-hover) !important; }
+    
+    #flp-app-wrapper .btn-secondary { background-color: transparent !important; color: var(--text-dark) !important; border: 2px solid var(--text-dark) !important; }
+    #flp-app-wrapper .btn-secondary:hover { background-color: var(--text-dark) !important; color: var(--bg-white) !important; border-color: var(--text-dark) !important; }
+
+    /* Prevent container from trapping z-indexes on the hero section so Layla can float above clouds */
+    #hero .container {
+        z-index: auto;
+    }
+
+    section {
+        padding: 80px 0;
+    }
+
+    /* --- HERO SECTION --- */
+    #hero {
+        position: relative;
+        padding-top: calc(var(--nav-height) + 60px);
+        padding-bottom: 80px;
+        background-color: #fbc4d4;
+        background-image: 
+            radial-gradient(circle at 50% 50%, #ffda6a 0%, transparent 65%),
+            radial-gradient(circle at 90% 50%, #fbc4d4 0%, transparent 60%),
+            radial-gradient(circle at 50% 100%, #ffa984 0%, transparent 70%),
+            linear-gradient(135deg, #e87171 0%, #ffb284 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden; 
+    }
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    /* Hero Section Carousel & Controlled Transitions */
+    @keyframes bee-flutter {
+        0% { transform: translateX(-50%) translateY(0px) rotate(-0.5deg); }
+        100% { transform: translateX(-50%) translateY(-6px) rotate(0.5deg); }
+    }
+
+    @keyframes layla-float {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        50% { transform: translateX(-50%) translateY(-8px); }
+    }
+
+    @keyframes christmas-chars-float {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        50% { transform: translateX(-50%) translateY(-10px); }
+    }
+
+    /* Slide 0: Animated Christmas Video Background */
+    .hero-christmas-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: 1;
+        transition: opacity 0.8s ease-in-out;
+        opacity: 1;
+        pointer-events: none;
+    }
+
+    /* Slide 0: Christmas Characters (Enlarged, elevated, shifted further left) */
+    .hero-christmas-chars {
+        position: absolute;
+        bottom: 125px;
+        left: 58.5%;
+        transform: translateX(-50%);
+        width: 44vw;
+        max-width: 640px;
+        min-width: 320px;
+        height: auto;
+        z-index: 2;
+        transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1), transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 1;
+        pointer-events: none;
+        animation: christmas-chars-float 5s ease-in-out infinite;
+    }
+
+    .hero-rainbow {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        min-height: 350px;
+        object-fit: cover;
+        object-position: bottom;
+        z-index: 1;
+        transition: opacity 0.75s ease-in-out;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .hero-daisy {
+        position: absolute;
+        bottom: 0; 
+        right: -15%;
+        left: auto;
+        width: 120%; 
+        height: auto;
+        min-height: 380px;
+        object-fit: cover;
+        object-position: bottom right;
+        z-index: 2;
+        transition: opacity 0.75s ease-in-out;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .hero-layla {
+        position: absolute;
+        bottom: 0;
+        left: 52%;
+        transform: translateX(-50%);
+        width: 32vw;
+        max-width: 450px;
+        min-width: 220px;
+        height: auto;
+        z-index: 2;
+        transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1), transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .hero-bee {
+        position: absolute;
+        bottom: 0;
+        left: 52%;
+        transform: translateX(-50%);
+        width: 55vw; 
+        max-width: 715px;
+        min-width: 364px;
+        height: auto;
+        z-index: 3;
+        transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1), transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    /* Active Slide Overrides for Backgrounds and Characters */
+    /* Slide 0: Christmas Book */
+    #hero[data-active-slide="0"] .hero-christmas-video {
+        opacity: 1;
+    }
+    #hero[data-active-slide="0"] .hero-christmas-chars {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+        animation: christmas-chars-float 5s ease-in-out infinite;
+    }
+    #hero[data-active-slide="0"] .hero-rainbow {
+        opacity: 0;
+    }
+    #hero[data-active-slide="0"] .hero-layla {
+        opacity: 0;
+        transform: translateX(-50%) translateY(25px);
+        animation: none;
+    }
+    #hero[data-active-slide="0"] .hero-daisy {
+        opacity: 0;
+    }
+    #hero[data-active-slide="0"] .hero-bee {
+        opacity: 0;
+        transform: translateX(-50%) translateY(25px);
+        animation: none;
+    }
+
+    /* Slide 1: Layla */
+    #hero[data-active-slide="1"] .hero-christmas-video {
+        opacity: 0;
+    }
+    #hero[data-active-slide="1"] .hero-christmas-chars {
+        opacity: 0;
+        transform: translateX(-50%) translateY(25px);
+        animation: none;
+    }
+    #hero[data-active-slide="1"] .hero-rainbow {
+        opacity: 1;
+    }
+    #hero[data-active-slide="1"] .hero-layla {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+        animation: layla-float 5s ease-in-out infinite;
+    }
+    #hero[data-active-slide="1"] .hero-daisy {
+        opacity: 0;
+    }
+    #hero[data-active-slide="1"] .hero-bee {
+        opacity: 0;
+        transform: translateX(-50%) translateY(25px);
+        animation: none;
+    }
+
+    /* Slide 2: Bumble the Bee */
+    #hero[data-active-slide="2"] .hero-christmas-video {
+        opacity: 0;
+    }
+    #hero[data-active-slide="2"] .hero-christmas-chars {
+        opacity: 0;
+        transform: translateX(-50%) translateY(25px);
+        animation: none;
+    }
+    #hero[data-active-slide="2"] .hero-rainbow {
+        opacity: 0;
+    }
+    #hero[data-active-slide="2"] .hero-layla {
+        opacity: 0;
+        transform: translateX(-50%) translateY(25px);
+        animation: none;
+    }
+    #hero[data-active-slide="2"] .hero-daisy {
+        opacity: 1;
+    }
+    #hero[data-active-slide="2"] .hero-bee {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+        animation: bee-flutter 0.8s infinite alternate ease-in-out;
+    }
+
+    /* Hero Text Slider & Slide Transition States */
+    .hero-text-slider {
+        position: relative;
+        min-height: 270px;
+    }
+
+    .hero-text-slide {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.45s ease-in-out, transform 0.45s ease-in-out;
+        transform: translateY(12px);
+    }
+
+    .hero-text-slide.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .hero-text-slide.active h1,
+    .hero-text-slide.active .subheadline,
+    .hero-text-slide.active .hero-actions {
+        opacity: 1 !important;
+    }
+
+    /* Hero Carousel Navigation Controls & Visual Indicator Dots */
+    .hero-carousel-controls {
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 6px 14px;
+        border-radius: 50px;
+        box-shadow: 0 10px 30px rgba(43, 31, 61, 0.12), 0 2px 6px rgba(43, 31, 61, 0.06);
+        border: 1.5px solid rgba(255, 255, 255, 0.9);
+        pointer-events: auto !important;
+        user-select: none;
+    }
+
+    .hero-arrow-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: #ffffff;
+        border: 1.5px solid #ebdfee;
+        color: var(--text-dark, #2b1f3d);
+        cursor: pointer !important;
+        pointer-events: auto !important;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 0;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    .hero-arrow-btn:hover {
+        background: #e87171;
+        color: #ffffff;
+        border-color: #e87171;
+        transform: scale(1.08);
+        box-shadow: 0 4px 14px rgba(232, 113, 113, 0.35);
+    }
+
+    .hero-arrow-btn:active {
+        transform: scale(0.94);
+    }
+
+    .hero-dots-group {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .hero-dot-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 14px;
+        border-radius: 30px;
+        background: transparent;
+        border: 1.5px solid transparent;
+        cursor: pointer !important;
+        pointer-events: auto !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        font-family: inherit;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: #635870;
+        outline: none;
+    }
+
+    .hero-dot-pill {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #cfc2dc;
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hero-dot-text {
+        opacity: 0.85;
+        transition: opacity 0.3s ease, font-weight 0.3s ease;
+    }
+
+    .hero-dot-btn:hover {
+        background: rgba(255, 255, 255, 0.95);
+        color: var(--text-dark, #2b1f3d);
+        border-color: #f0e6f5;
+    }
+
+    .hero-dot-btn:hover .hero-dot-pill {
+        background: #e87171;
+        transform: scale(1.15);
+    }
+
+    .hero-dot-btn.active {
+        background: #ffffff;
+        color: #e87171;
+        border-color: #ffd8d8;
+        box-shadow: 0 3px 12px rgba(232, 113, 113, 0.22);
+    }
+
+    .hero-dot-btn.active .hero-dot-pill {
+        background: #e87171;
+        width: 22px;
+        border-radius: 12px;
+    }
+
+    .hero-dot-btn.active .hero-dot-text {
+        opacity: 1;
+        font-weight: 700;
+        color: #e87171;
+    }
+
+    @media (max-width: 640px) {
+        .hero-carousel-controls {
+            bottom: 14px;
+            padding: 5px 10px;
+            gap: 6px;
+        }
+        .hero-dot-btn {
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            gap: 6px;
+        }
+        .hero-arrow-btn {
+            width: 32px;
+            height: 32px;
+        }
+        .hero-text-slider {
+            min-height: 290px;
+        }
+    }
+
+    .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 60px;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: clamp(2.5rem, 5vw, 3.8rem);
+        line-height: 1.1;
+        margin-bottom: 20px;
+        color: var(--text-dark);
+    }
+
+    .subheadline {
+        font-size: clamp(1.1rem, 2vw, 1.4rem);
+        font-weight: 400;
+        color: var(--text-dark);
+        margin-bottom: 30px;
+    }
+
+    .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .hero-content {
+        position: relative;
+    }
+
+    /* Hero Element Fade-In Animations */
+    @keyframes fadeUpIn {
+        0% { opacity: 0; transform: translateY(30px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-socials-top { opacity: 0; animation: fadeUpIn 0.8s ease-out forwards 0.2s; }
+    .hero-content-inner h1 { opacity: 0; animation: fadeUpIn 0.8s ease-out forwards 0.4s; }
+    .hero-content-inner .subheadline { opacity: 0; animation: fadeUpIn 0.8s ease-out forwards 0.6s; }
+    .hero-content-inner .hero-actions { opacity: 0; animation: fadeUpIn 0.8s ease-out forwards 0.8s; }
+
+    .hero-text-clouds {
+        position: absolute;
+        top: -50px;
+        left: -140px;
+        width: 950px;
+        z-index: 1;
+        pointer-events: none;
+        opacity: 0.9;
+        /* Combine float animation with the base fade so it hides when the bee is visible */
+        animation: 
+            cloud-float-alt 9s ease-in-out infinite;
+    }
+
+    .hero-content-inner {
+        position: relative;
+        z-index: 10;
+        padding-right: 6%;
+        max-width: 480px;
+    }
+
+    @keyframes cloud-float-alt {
+        0%, 100% { transform: translateY(0) translateX(0) scale(1); }
+        50% { transform: translateY(12px) translateX(-10px) scale(1.02); }
+    }
+
+    /* --- VIDEO INTEGRATION --- */
+    #flp-app-wrapper .hero-video-box {
+        margin-left: auto !important;
+        margin-right: 0 !important;
+        margin-top: 170px;
+        position: relative;
+        z-index: 100;
+        max-width: 380px;
+        width: 100%;
+        animation: hero-video-float 7s ease-in-out infinite;
+    }
+
+    @keyframes hero-video-float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+    }
+
+    .story-clouds {
+        position: absolute;
+        top: -150px; 
+        left: 50%; 
+        margin-left: -325px;
+        width: 650px;
+        z-index: 1; 
+        pointer-events: none;
+        animation: cloud-float 8s ease-in-out infinite;
+        opacity: 0.85;
+    }
+    
+    .heading-clouds-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 550px;
+        z-index: 1;
+        pointer-events: none;
+        opacity: 0.85;
+        animation: cloud-float-center 8s ease-in-out infinite;
+    }
+
+    .heading-clouds-left {
+        position: absolute;
+        top: 50%;
+        left: -50px;
+        transform: translateY(-50%);
+        width: 500px;
+        z-index: 1;
+        pointer-events: none;
+        opacity: 0.85;
+        animation: cloud-float-left 8s ease-in-out infinite;
+    }
+
+    @keyframes cloud-float {
+        0%, 100% { transform: translateY(0) translateX(0); }
+        50% { transform: translateY(-12px) translateX(15px); }
+    }
+
+    @keyframes cloud-float-center {
+        0%, 100% { transform: translate(-50%, -50%); }
+        50% { transform: translate(calc(-50% + 15px), calc(-50% - 12px)); }
+    }
+
+    @keyframes cloud-float-left {
+        0%, 100% { transform: translateY(-50%) translateX(0); }
+        50% { transform: translateY(calc(-50% - 12px)) translateX(15px); }
+    }
+    
+    .video-wrapper {
+        background: var(--bg-white) !important;
+        padding: 12px !important;
+        border: none !important;
+        border-radius: var(--border-radius-lg) !important;
+        box-shadow: var(--shadow-md) !important;
+        position: relative !important;
+        z-index: 50 !important;
+        transition: var(--transition-bouncy) !important;
+        margin: 0 !important;
+    }
+
+    .video-wrapper:hover {
+        transform: scale(1.03) rotate(1deg) !important; 
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .video-container {
+        position: relative !important;
+        padding-bottom: 56.25% !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        border-radius: var(--border-radius-md) !important;
+        background: #000 !important;
+        border: none !important;
+        margin: 0 !important;
+    }
+
+    .video-container iframe {
+        position: absolute !important;
+        top: 0 !important; 
+        left: 0 !important;
+        width: 100% !important; 
+        height: 100% !important;
+        border: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    #flp-app-wrapper .video-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 32px;
+        max-width: 1000px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        position: relative;
+        z-index: 2;
+    }
+
+    .yt-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 20px;
+        font-weight: 600;
+        color: #FF0000;
+        transition: var(--transition-bouncy);
+    }
+    .yt-link:hover { 
+        transform: scale(1.05);
+        color: #e50000;
+    }
+
+    /* --- CONTENT SECTIONS --- */
+    .section-header {
+        text-align: center;
+        margin-bottom: 48px;
+    }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px; align-items: center; }
+
+    .card {
+        background: var(--bg-white);
+        border-radius: var(--border-radius-lg);
+        padding: 32px;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition-bouncy);
+    }
+
+    .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); }
+    
+    .stat-block { display: flex; flex-direction: column; gap: 8px; transition: var(--transition-bouncy); }
+    .stat-block:hover { transform: scale(1.05); }
+    .stat-number { font-size: 3rem; font-weight: 700; color: var(--text-dark); }
+    
+    /* Gallery Grid (Books) - Bulletproofed for 4 Books */
+    #flp-app-wrapper .gallery-grid { 
+        display: grid !important; 
+        grid-template-columns: repeat(5, 1fr) !important; 
+        gap: 16px !important; 
+        position: relative !important; 
+        z-index: 10 !important; 
+    }
+
+    /* Aggressive CSS to hide WP auto-generated backgrounds, frames or pseudo-elements */
+    #flp-app-wrapper .gallery-item::before,
+    #flp-app-wrapper .gallery-item::after {
+        display: none !important;
+    }
+    
+    #flp-app-wrapper .gallery-item {
+        aspect-ratio: 1 !important; 
+        background: transparent !important; 
+        background-color: transparent !important;
+        background-image: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        outline: none !important;
+        border-radius: 0 !important; 
+        overflow: visible !important;
+        transition: var(--transition-bouncy) !important;
+        cursor: pointer !important;
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: none !important;
+        z-index: 5 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    #flp-app-wrapper .gallery-item img {
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        width: 85% !important;
+        height: 85% !important;
+        max-width: 85% !important;
+        object-fit: contain !important;
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        outline: none !important;
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        filter: none !important; /* Forces WP shadow/frame artifacts to disappear */
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+        position: relative !important;
+        transform: scale(1) translateZ(0) !important;
+        z-index: 10 !important;
+    }
+    
+    /* Playful alternated hover rotation */
+    #flp-app-wrapper .gallery-item:nth-child(odd):hover { 
+        transform: translateY(-10px) scale(1.05) rotate(-2deg); 
+        box-shadow: none !important; 
+        z-index: 10; 
+    }
+    #flp-app-wrapper .gallery-item:nth-child(even):hover { 
+        transform: translateY(-10px) scale(1.05) rotate(2deg); 
+        box-shadow: none !important; 
+        z-index: 10; 
+    }
+    #flp-app-wrapper .gallery-item:hover img {
+        transform: scale(1.1) !important;
+    }
+
+
+
+    /* --- OUR STORY (NEW INSPIRATION SECTION) --- */
+    .story-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .story-card {
+        background: var(--bg-white);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: var(--transition-bouncy);
+        transform: translateY(0);
+    }
+    
+    .story-card:hover {
+        transform: translateY(-12px) rotate(1.5deg);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    }
+    
+    .story-card-img {
+        height: 180px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+    }
+
+    .story-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 50%; /* Shifted 50% as requested */
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .mission-photo {
+        object-position: top;
+        transform: scale(1.05) translateY(-6%); /* Makes the girl smaller than before and shifts her up */
+    }
+
+    .mission-logo {
+        width: 65%;
+        height: auto;
+        object-fit: contain;
+        transform: scale(1);
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .story-card:hover .story-photo {
+        transform: scale(1.08);
+    }
+
+    .story-card:hover .mission-photo {
+        transform: scale(1.12) translateY(-6%);
+    }
+
+    .story-card:hover .mission-logo {
+        transform: scale(1.1);
+    }
+
+    .boy-photo {
+        transform: scale(1.15); /* Make the boy slightly larger to begin with */
+    }
+
+    .story-card:hover .boy-photo {
+        transform: scale(1.25); /* Increase scale on hover to match standard effect */
+    }
+
+    .card-icon {
+        width: 90px;
+        height: 90px;
+        transition: var(--transition-bouncy);
+    }
+
+    .story-card:hover .card-icon {
+        transform: scale(1.15) rotate(5deg);
+    }
+
+    /* Looping icon animations */
+    .icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: card-icon-float 5s ease-in-out infinite;
+    }
+    .icon-wrapper-2 { animation-delay: 1.5s; }
+    .icon-wrapper-3 { animation-delay: 3s; }
+
+    @keyframes card-icon-float {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-8px) rotate(2deg); }
+    }
+    
+    .story-card-content {
+        padding: 24px 20px;
+        text-align: center;
+    }
+    
+    .story-card-title {
+        font-weight: 700;
+        font-size: 1.15rem;
+        color: var(--text-dark);
+        margin-bottom: 4px;
+        letter-spacing: -0.5px;
+    }
+    
+    .story-card-subtitle {
+        font-size: 0.85rem;
+        color: #444;
+        line-height: 1.4;
+        display: block;
+        margin-top: 4px;
+    }
+
+    /* Cute Floating Animations */
+    @keyframes float-slow {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(5deg); }
+    }
+    
+    @keyframes float-fast {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-15px) rotate(-8deg); }
+    }
+
+    @keyframes pulse-soft {
+        0%, 100% { transform: scale(1) translateY(0); }
+        50% { transform: scale(1.05) translateY(-10px); }
+    }
+
+    @keyframes spin-slow {
+        100% { transform: rotate(360deg); }
+    }
+    
+    .floating-decor {
+        position: absolute;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.8;
+    }
+    
+    .decor-1 { top: 15%; left: 5%; animation: float-slow 6s ease-in-out infinite; width: 80px; }
+    .decor-2 { top: 10%; right: 10%; animation: float-fast 5s ease-in-out infinite; width: 100px; }
+    .decor-3 { bottom: 20%; left: 50%; animation: float-slow 7s ease-in-out infinite; width: 60px; margin-left: -30px; }
+    
+    /* New Inspiration Decors */
+    .cute-flower { top: 20%; right: 8%; width: 90px; animation: float-slow 7s ease-in-out infinite, spin-slow 25s linear infinite; }
+    .cute-sun { bottom: 15%; left: 2%; width: 120px; animation: pulse-soft 4s ease-in-out infinite; }
+    .cute-star { top: 60%; left: 45%; width: 40px; animation: float-fast 5s ease-in-out infinite, spin-slow 20s linear infinite; }
+
+    /* Books Section specific classes */
+    .books-intro {
+        position: relative;
+        flex: 1;
+        min-width: 300px;
+        text-align: left;
+    }
+
+    /* --- MODALS --- */
+    .story-modal-overlay {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.4); backdrop-filter: blur(8px);
+        display: none; align-items: center; justify-content: center; z-index: 3000;
+        opacity: 0; transition: opacity 0.3s ease;
+    }
+    .story-modal-overlay.active { display: flex; opacity: 1; }
+    
+    .story-modal-content {
+        background-color: #f4eae1;
+        border-radius: 24px;
+        width: 95%; max-width: 1000px; max-height: 90vh; overflow-y: auto;
+        position: relative;
+        display: flex; flex-direction: row; gap: 40px; padding: 50px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        transform: scale(0.9) translateY(20px); transition: var(--transition-bouncy);
+    }
+    .story-modal-overlay.active .story-modal-content { transform: scale(1) translateY(0); }
+    
+    .story-modal-close {
+        position: absolute; top: 20px; right: 24px; font-size: 32px;
+        color: #888; cursor: pointer; border: none; background: none; transition: var(--transition-bouncy);
+        line-height: 1; z-index: 10;
+    }
+    .story-modal-close:hover { color: #1a1a1a; transform: scale(1.2) rotate(90deg); }
+    
+    .story-modal-left { flex: 1.2; color: #4a443e; }
+    .story-modal-left h2 { font-size: 2.5rem; color: #2d2a26; margin-bottom: 24px; font-weight: 700; }
+    .story-modal-left h3 { font-size: 1.6rem; color: #d87659; margin-bottom: 12px; margin-top: 24px; font-weight: 600; }
+    .story-modal-left p { margin-bottom: 16px; font-size: 1.05rem; line-height: 1.7; }
+    .story-modal-left .lead { font-size: 1.25rem; font-weight: 500; color: #2d2a26; }
+    
+    .story-modal-left blockquote {
+        margin: 24px 0; padding: 20px 30px 20px 40px; background: #eadecd;
+        border-radius: 16px 16px 16px 0; font-style: italic; font-weight: 600; color: #2d2a26;
+        position: relative;
+        transition: var(--transition-bouncy);
+    }
+    .story-modal-left blockquote:hover {
+        transform: scale(1.02) translateX(10px);
+    }
+    .story-modal-left blockquote::before {
+        content: '"'; position: absolute; top: 0px; left: 12px; font-size: 4rem; color: #dcae8a; opacity: 0.6; line-height: 1; font-family: serif;
+    }
+
+    .mission-list {
+        list-style: none; padding-left: 0; margin-top: 16px;
+    }
+    .mission-list li {
+        position: relative; padding-left: 28px; margin-bottom: 16px; font-size: 1.05rem; line-height: 1.6;
+        transition: var(--transition-bouncy);
+    }
+    .mission-list li:hover {
+        transform: translateX(5px);
+        color: #2d2a26;
+    }
+    .mission-list li::before {
+        content: ''; position: absolute; left: 0; top: 10px; width: 10px; height: 10px;
+        border-radius: 50%; background-color: #dcae8a; transition: var(--transition-bouncy);
+    }
+    .mission-list li:hover::before {
+        transform: scale(1.5);
+        background-color: var(--primary-yellow);
+    }
+    
+    .story-modal-right {
+        flex: 0.8; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    
+    #flp-app-wrapper .story-arch {
+        background-color: #abc9d4;
+        border-radius: 200px 200px 0 0;
+        width: 100%; max-width: 300px; height: 100%; min-height: 400px;
+        display: flex; align-items: center; justify-content: center;
+        padding: 40px; position: relative;
+        border-bottom: 12px solid #dcae8a;
+        transition: var(--transition-bouncy);
+        margin: 0 auto !important;
+    }
+    .story-arch:hover {
+        transform: translateY(-10px);
+    }
+
+    .story-arch img { width: 100%; max-width: 180px; object-fit: contain; transform: translateY(-10px); transition: var(--transition-bouncy); }
+    .story-arch:hover img { transform: translateY(-15px) scale(1.05); }
+    
+    /* Full Image Arch Overrides (Used to make photographic images perfectly fill their arches) */
+    #flp-app-wrapper .full-img-arch {
+        padding: 0 !important;
+        overflow: hidden !important;
+    }
+    #flp-app-wrapper .full-img-arch img {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        object-fit: cover !important;
+        object-position: center top !important; /* Added to keep faces in arch view */
+        border-radius: 0 !important;
+        transform: scale(1.01) !important; /* Slight baseline scale to eliminate 1px gaps */
+        margin: 0 !important;
+        box-shadow: none !important;
+    }
+    #flp-app-wrapper .full-img-arch:hover img {
+        transform: scale(1.08) !important;
+    }
+    
+    .mission-arch { background-color: #dcae8a !important; border-bottom: 12px solid #abc9d4 !important; }
+    .drives-arch { background-color: #ecd599 !important; border-bottom: 12px solid #dcae8a !important; }
+    .book1-arch { background-color: #f8c8d8 !important; border-bottom: 12px solid #abc9d4 !important; }
+    .book2-arch { background-color: #e6f0fa !important; border-bottom: 12px solid #ecd599 !important; }
+    .book3-arch { background-color: #fbe7a1 !important; border-bottom: 12px solid #dcae8a !important; }
+    .book4-arch { background-color: #d8ece0 !important; border-bottom: 12px solid #e87171 !important; }
+    .book5-arch { background-color: #d2ecf9 !important; border-bottom: 12px solid #3898cf !important; }
+
+    .book1-arch img, .book2-arch img, .book3-arch img, .book4-arch img, .book5-arch img { max-width: 230px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-radius: 8px; margin-top: 30px; }
+
+    /* --- CONTACT & SOCIALS --- */
+    .contact-details a {
+        color: var(--text-dark);
+        font-weight: 500;
+        transition: var(--transition-bouncy);
+        display: inline-block;
+    }
+    .contact-details a:hover {
+        color: var(--primary-yellow-hover);
+        transform: translateX(5px);
+    }
+    
+    @keyframes wiggle {
+        0%, 100% { transform: rotate(0deg) scale(1.15); }
+        25% { transform: rotate(-12deg) scale(1.15); }
+        75% { transform: rotate(12deg) scale(1.15); }
+    }
+
+    .social-icon {
+        display: flex; align-items: center; justify-content: center;
+        width: 54px; height: 54px; background-color: var(--primary-yellow);
+        border-radius: 50%; color: var(--text-dark);
+        box-shadow: var(--shadow-sm); transition: var(--transition-bouncy);
+    }
+    .social-icon:hover {
+        background-color: var(--primary-yellow-hover); 
+        color: var(--text-dark); 
+        box-shadow: 0 12px 24px rgba(255, 203, 5, 0.4);
+        animation: wiggle 0.5s ease-in-out forwards;
+        transform: scale(1.15);
+        z-index: 2;
+    }
+
+    /* --- GENERIC MODAL --- */
+    .modal {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.6); display: none; align-items: center; justify-content: center;
+        z-index: 4000; backdrop-filter: blur(5px);
+        opacity: 0; transition: opacity 0.3s ease;
+    }
+    .modal.active { display: flex; opacity: 1; }
+    .modal-content {
+        background: white; padding: 40px; border-radius: var(--border-radius-lg);
+        width: 90%; max-width: 500px; text-align: center; position: relative;
+        transform: scale(0.9); transition: var(--transition-bouncy);
+    }
+    .modal.active .modal-content { transform: scale(1); }
+    .close-modal { position: absolute; top: 20px; right: 20px; font-size: 24px; cursor: pointer; transition: var(--transition-bouncy); }
+    .close-modal:hover { transform: scale(1.2) rotate(90deg); color: var(--primary-yellow-hover); }
+    input[type="email"] {
+        width: 100%; padding: 15px; margin: 20px 0; border: 1px solid #ddd;
+        border-radius: var(--border-radius-pill); outline-color: var(--primary-yellow);
+        transition: var(--transition);
+    }
+    input[type="email"]:focus {
+        transform: scale(1.02); box-shadow: 0 4px 15px rgba(255,203,5,0.2);
+    }
+
+    
+    /* --- OUR NEWS & PRESS SECTION --- */
+    .news-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .news-card {
+        background: var(--bg-white);
+        border-radius: var(--border-radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        display: flex;
+        flex-direction: column;
+        transition: var(--transition-bouncy);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        position: relative;
+    }
+
+    .news-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.09);
+        border-color: rgba(255, 203, 5, 0.5);
+    }
+
+    .news-card-banner {
+        height: 220px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+        padding: 16px 18px;
+        background-color: #f7f3ee;
+    }
+
+    .news-card-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1;
+    }
+
+    .news-card:hover .news-card-img {
+        transform: scale(1.08);
+    }
+
+    .news-card-banner::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 55%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .news-tag {
+        position: relative;
+        z-index: 3;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.74rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 6px 14px;
+        border-radius: var(--border-radius-pill);
+        background: rgba(255, 255, 255, 0.95);
+        color: var(--text-dark);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(8px);
+    }
+
+    .news-card-body {
+        padding: 28px 24px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .news-meta {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.85rem;
+        color: #888;
+        margin-bottom: 12px;
+        font-weight: 500;
+    }
+
+    .news-outlet {
+        color: #d87659;
+        font-weight: 600;
+    }
+
+    .news-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        line-height: 1.35;
+        margin-bottom: 12px;
+        transition: color 0.2s;
+    }
+
+    .news-card:hover .news-title {
+        color: #d87659;
+    }
+
+    .news-excerpt {
+        color: var(--text-gray);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 24px;
+        flex-grow: 1;
+    }
+
+    .news-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: var(--text-dark);
+        transition: var(--transition-bouncy);
+        align-self: flex-start;
+        margin-top: auto;
+        cursor: pointer;
+    }
+
+    .news-link svg {
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .news-card:hover .news-link {
+        color: var(--primary-yellow-hover);
+    }
+
+    .news-card:hover .news-link svg {
+        transform: translateX(6px);
+    }
+
+    .news-press-banner {
+        background: rgba(255, 255, 255, 0.8);
+        border: 2px dashed #ffda6a;
+        border-radius: var(--border-radius-md);
+        padding: 24px 32px;
+        margin-top: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        flex-wrap: wrap;
+        backdrop-filter: blur(8px);
+        position: relative;
+        z-index: 2;
+    }
+
+    
+    /* --- BURGER MENU & MOBILE DRAWER --- */
+    .burger-btn {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        border-radius: var(--border-radius-pill);
+        background: #FFFFFF;
+        border: 2px solid rgba(0, 0, 0, 0.08);
+        box-shadow: var(--shadow-sm);
+        cursor: pointer;
+        gap: 5px;
+        padding: 0;
+        z-index: 1002;
+        transition: var(--transition-bouncy);
+    }
+
+    .burger-btn:hover {
+        background: var(--primary-yellow);
+        border-color: var(--primary-yellow);
+        transform: scale(1.05);
+    }
+
+    .burger-line {
+        width: 22px;
+        height: 2.5px;
+        background: var(--text-dark);
+        border-radius: 4px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-origin: center;
+    }
+
+    .burger-btn.active .line-1 {
+        transform: translateY(7.5px) rotate(45deg);
+    }
+
+    .burger-btn.active .line-2 {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    .burger-btn.active .line-3 {
+        transform: translateY(-7.5px) rotate(-45deg);
+    }
+
+    .mobile-nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(45, 43, 61, 0.5);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        z-index: 2000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .mobile-nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-nav-drawer {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 86%;
+        max-width: 360px;
+        height: 100%;
+        background: #FFFFFF;
+        z-index: 2001;
+        box-shadow: -10px 0 35px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        overflow-y: auto;
+        padding: 24px;
+        box-sizing: border-box;
+    }
+
+    .mobile-nav-drawer.active {
+        transform: translateX(0);
+    }
+
+    .mobile-nav-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 18px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .mobile-nav-logo img {
+        height: 60px;
+        width: auto;
+        object-fit: contain;
+    }
+
+    .mobile-nav-close {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #f5f3fa;
+        border: none;
+        font-size: 26px;
+        color: var(--text-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition-bouncy);
+    }
+
+    .mobile-nav-close:hover {
+        background: #fbc4d4;
+        transform: scale(1.1) rotate(90deg);
+    }
+
+    .mobile-nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-top: 20px;
+        flex-grow: 1;
+    }
+
+    .mobile-nav-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 18px;
+        border-radius: var(--border-radius-pill);
+        font-weight: 600;
+        font-size: 1.05rem;
+        color: var(--text-dark);
+        transition: var(--transition-bouncy);
+        cursor: pointer;
+    }
+
+    .mobile-nav-link:hover, .mobile-nav-link:active {
+        background: #fbc4d4;
+        transform: translateX(4px);
+    }
+
+    .mobile-nav-icon {
+        font-size: 1.2rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-accordion {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-accordion-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 12px 18px;
+        border-radius: var(--border-radius-pill);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 1.05rem;
+        color: var(--text-dark);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        transition: var(--transition-bouncy);
+    }
+
+    .mobile-accordion-toggle:hover {
+        background: #fbc4d4;
+        transform: translateX(4px);
+    }
+
+    .accordion-arrow {
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        color: #777;
+    }
+
+    .mobile-accordion.open .accordion-arrow {
+        transform: rotate(180deg);
+        color: var(--text-dark);
+    }
+
+    .mobile-accordion-content {
+        display: none;
+        padding-left: 48px;
+        padding-top: 4px;
+        padding-bottom: 6px;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .mobile-accordion.open .mobile-accordion-content {
+        display: flex;
+    }
+
+    .mobile-sublink {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: #555;
+        padding: 8px 12px;
+        border-radius: var(--border-radius-sm);
+        transition: color 0.2s, background 0.2s;
+        cursor: pointer;
+    }
+
+    .mobile-sublink:hover {
+        color: #d87659;
+        background: #fff0f4;
+    }
+
+    .mobile-nav-footer {
+        padding-top: 20px;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        margin-top: 20px;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 992px) {
+        .hero-christmas-chars { left: 50%; width: 75vw; max-width: 520px; bottom: 120px; }
+        .hero-layla { left: 50%; width: 40vw; }
+        .hero-bee { left: 50%; width: 72vw; }
+        .hero-grid, .grid-2 { grid-template-columns: 1fr; text-align: center; }
+        .hero-actions { justify-content: center; }
+        .hero-socials-top { justify-content: center; }
+        .hero-text-clouds { width: 750px; left: 50%; margin-left: -375px; top: -10px; }
+        .hero-content-inner { padding-right: 0; max-width: 100%; }
+        #flp-app-wrapper .hero-video-box { margin-left: auto !important; margin-right: auto !important; margin-top: 300px; padding-left: 0; max-width: 100%; } 
+        .story-clouds { width: 450px; left: 50%; margin-left: -225px; top: -100px; }
+        .heading-clouds-left { left: 50%; transform: translate(-50%, -50%); animation: cloud-float-center 8s ease-in-out infinite; }
+        .heading-clouds-center { width: 450px; }
+        .grid-3 { grid-template-columns: repeat(2, 1fr); }
+        .story-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .pillars-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        .news-grid { grid-template-columns: repeat(2, 1fr); }
+        #flp-app-wrapper .gallery-grid, .gallery-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 16px !important; }
+        .social-links { justify-content: center; }
+        .contact-details p { justify-content: center; }
+        h1 { text-align: center; }
+        .books-intro { text-align: center; display: flex; flex-direction: column; align-items: center; }
+    }
+    
+    @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .logo { height: 120px; } 
+        .hero-christmas-chars { width: 85vw; max-width: 460px; left: 50%; bottom: 180px; z-index: 2; }
+        .hero-layla { width: 60vw; left: 50%; bottom: 140px; z-index: 2; }
+        .hero-bee { width: 104vw; left: 50%; bottom: 140px; z-index: 3; }
+        .hero-rainbow { height: 50%; z-index: 1; }
+        .hero-daisy { height: 55%; width: 110%; right: -5%; left: auto; z-index: 2; bottom: 0; object-position: bottom right; }
+        #flp-app-wrapper .hero-video-box { margin-top: 220px; z-index: 100; } 
+        .cute-star { top: 75%; } 
+        .hero-text-clouds { width: 550px; left: 50%; margin-left: -275px; top: 25px; }
+        .story-clouds { width: 400px; left: 50%; margin-left: -200px; top: -80px; }
+        .heading-clouds-center, .heading-clouds-left { width: 350px; }
+        .grid-3 { grid-template-columns: 1fr; }
+        .story-grid { grid-template-columns: 1fr; gap: 20px; }
+        .pillars-grid { grid-template-columns: 1fr !important; }
+        .news-grid { grid-template-columns: 1fr; }
+        .news-press-banner { flex-direction: column; text-align: center; }
+        #flp-app-wrapper .gallery-grid, .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 14px !important; }
+        #flp-app-wrapper .video-gallery { grid-template-columns: 1fr; gap: 32px; }
+        section { padding: 48px 0; }
+        
+    @media (max-width: 480px) {
+        .nav-join-btn { font-size: 0.78rem !important; padding: 8px 12px !important; }
+        .logo { height: 70px; }
+        .burger-btn { width: 44px; height: 44px; }
+    }
+        
+        .story-modal-content { flex-direction: column; padding: 40px 24px; gap: 24px; }
+        .story-modal-right { order: -1; }
+        #flp-app-wrapper .story-arch { min-height: 250px; max-width: 250px; margin: 0 auto !important; }
+        .story-modal-left h2 { font-size: 2rem; }
+    }
+</style>
+</head>
+<body>
+<div id="flp-app-wrapper">
+    <nav>
+        <div class="nav-container">
+            <a href="#hero" class="logo">
+                <img decoding="async" src="assets/final-logo-Trademark-.png" alt="For Little People Logo" class="skip-lazy" loading="eager" data-no-lazy="1">
+            </a>
+            <div class="nav-links">
+                <div class="nav-item"><a href="#hero">Home</a></div>
+                <div class="nav-item">
+                    <a href="#our-story">Our story</a>
+                    <div class="dropdown-menu">
+                        <span onclick="openStoryModal()">Our story</span>
+                        <span onclick="openMissionModal()">Our mission & vision</span>
+                        <span onclick="openDrivesModal()">What drives us</span>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#our-books">Our books</a>
+                    <div class="dropdown-menu">
+                        <span onclick="openBook4Modal()">The Perfect Christmas</span>
+                        <span onclick="openBook5Modal()">Hosi and the Whales</span>
+                        <span onclick="openBook1Modal()">I am beautiful</span>
+                        <span onclick="openBook2Modal()">The hundred dresses</span>
+                        <span onclick="openBook3Modal()">Bumble the bee</span>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="#our-news">Our news</a></div>
+                <div class="nav-item"><a href="#contact">Contact</a></div>
+            </div>
+            <div class="nav-actions" style="display: flex; align-items: center; gap: 12px;">
+                <button onclick="toggleModal()" class="btn btn-primary nav-join-btn">Join our magic</button>
+                <button class="burger-btn" id="burgerBtn" onclick="toggleMobileNav()" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="burger-line line-1"></span>
+                    <span class="burger-line line-2"></span>
+                    <span class="burger-line line-3"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Overlay & Drawer -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+        <div class="mobile-nav-header">
+            <div class="mobile-nav-logo">
+                <img src="assets/final-logo-Trademark-.png" alt="For Little People Logo">
+            </div>
+            <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Close menu">&times;</button>
+        </div>
+
+        <div class="mobile-nav-links">
+            <a href="#hero" class="mobile-nav-link" onclick="closeMobileNav()">
+                <span class="mobile-nav-icon">🏠</span>
+                <span>Home</span>
+            </a>
+
+            <!-- Our Story Mobile Accordion -->
+            <div class="mobile-accordion">
+                <button class="mobile-accordion-toggle" onclick="toggleMobileAccordion('storyAccordion')" aria-expanded="false">
+                    <span style="display:flex; align-items:center; gap:12px;">
+                        <span class="mobile-nav-icon">📖</span>
+                        <span>Our story</span>
+                    </span>
+                    <svg class="accordion-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="mobile-accordion-content" id="storyAccordion">
+                    <a href="#our-story" onclick="openStoryModalFromMobile()" class="mobile-sublink">
+                        <span>• Our story</span>
+                    </a>
+                    <a href="#our-story" onclick="openMissionModalFromMobile()" class="mobile-sublink">
+                        <span>• Mission &amp; vision</span>
+                    </a>
+                    <a href="#our-story" onclick="openDrivesModalFromMobile()" class="mobile-sublink">
+                        <span>• What drives us</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Our Books Mobile Accordion -->
+            <div class="mobile-accordion">
+                <button class="mobile-accordion-toggle" onclick="toggleMobileAccordion('booksAccordion')" aria-expanded="false">
+                    <span style="display:flex; align-items:center; gap:12px;">
+                        <span class="mobile-nav-icon">📚</span>
+                        <span>Our books</span>
+                    </span>
+                    <svg class="accordion-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="mobile-accordion-content" id="booksAccordion">
+                    <a href="#our-books" onclick="openBook4ModalFromMobile()" class="mobile-sublink">
+                        <span>• The Perfect Christmas</span>
+                    </a>
+                    <a href="#our-books" onclick="openBook5ModalFromMobile()" class="mobile-sublink">
+                        <span>• Hosi and the Whales</span>
+                    </a>
+                    <a href="#our-books" onclick="openBook1ModalFromMobile()" class="mobile-sublink">
+                        <span>• I am beautiful and so are you</span>
+                    </a>
+                    <a href="#our-books" onclick="openBook2ModalFromMobile()" class="mobile-sublink">
+                        <span>• The story of a hundred dresses</span>
+                    </a>
+                    <a href="#our-books" onclick="openBook3ModalFromMobile()" class="mobile-sublink">
+                        <span>• Bumble the bee</span>
+                    </a>
+                </div>
+            </div>
+
+            <a href="#core-pillars" class="mobile-nav-link" onclick="closeMobileNav()">
+                <span class="mobile-nav-icon">⭐</span>
+                <span>Core pillars</span>
+            </a>
+
+            <a href="#our-animations" class="mobile-nav-link" onclick="closeMobileNav()">
+                <span class="mobile-nav-icon">🎬</span>
+                <span>Our animations</span>
+            </a>
+
+            <a href="#our-news" class="mobile-nav-link" onclick="closeMobileNav()">
+                <span class="mobile-nav-icon">📰</span>
+                <span>Our news</span>
+            </a>
+
+            <a href="#contact" class="mobile-nav-link" onclick="closeMobileNav()">
+                <span class="mobile-nav-icon">💌</span>
+                <span>Contact</span>
+            </a>
+        </div>
+
+        <div class="mobile-nav-footer">
+            <button onclick="toggleModalFromMobile()" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                Join our magic
+            </button>
+
+            <div class="mobile-socials" style="display: flex; gap: 12px; justify-content: center; margin-top: 18px;">
+                <a href="https://www.facebook.com/people/For-Little-People/61577402139390/" target="_blank" class="social-icon" style="width: 40px; height: 40px;" title="Facebook">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/for_little_people?igsh=c2t0NjdrOG5rNGho&utm_source=qr" target="_blank" class="social-icon" style="width: 40px; height: 40px;" title="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://www.tiktok.com/@for.little.people?is_from_webapp=1&sender_device=pc" target="_blank" class="social-icon" style="width: 40px; height: 40px;" title="TikTok">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 15.68a6.34 6.34 0 0 0 6.27 6.36 6.34 6.34 0 0 0 6.27-6.36v-6.9a8.16 8.16 0 0 0 4.46 1.34v-3.43a4.78 4.78 0 0 1-2.41-.01z"/></svg>
+                </a>
+                <a href="https://www.youtube.com/@for_little_people_sa" target="_blank" class="social-icon" style="width: 40px; height: 40px;" title="YouTube">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <header id="hero" data-active-slide="0">
+        <div class="hero-overlay">
+            <!-- Animated Christmas Video Background for Slide 0 -->
+            <video class="hero-christmas-video" autoplay loop muted playsinline preload="auto">
+                <source src="assets/Animated_Christmas_Background.mp4" type="video/mp4">
+            </video>
+            <img decoding="async" src="assets/Rainbow.png" alt="Rainbow background" class="hero-rainbow skip-lazy" loading="eager" data-no-lazy="1">
+            <img decoding="async" src="assets/daisy.png" alt="Daisy background" class="hero-daisy skip-lazy" loading="eager" data-no-lazy="1">
+        </div>
+        
+        <!-- Hero Characters -->
+        <img decoding="async" src="assets/christmas-characters.png" alt="Christmas Characters" class="hero-christmas-chars skip-lazy" loading="eager" data-no-lazy="1">
+        <img decoding="async" src="assets/layla-character.png" alt="Layla Character" class="hero-layla skip-lazy" loading="eager" data-no-lazy="1">
+        <img decoding="async" src="assets/Bee2.png" alt="Bee Character" class="hero-bee skip-lazy" loading="eager" data-no-lazy="1">
+        
+        <!-- New Inspirational Floating Decors -->
+        <svg class="floating-decor cute-flower" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50,0 Q55,40 100,50 Q55,60 50,100 Q45,60 0,50 Q45,40 50,0" fill="#71c3d9"/>
+            <circle cx="50" cy="50" r="15" fill="#fbc4d4"/>
+        </svg>
+        <svg class="floating-decor cute-sun" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Colorful Rays -->
+            <line x1="50" y1="10" x2="50" y2="25" stroke="#fbc4d4" stroke-width="8" stroke-linecap="round"/>
+            <line x1="50" y1="90" x2="50" y2="75" stroke="#9bd3e6" stroke-width="8" stroke-linecap="round"/>
+            <line x1="10" y1="50" x2="25" y2="50" stroke="#e87171" stroke-width="8" stroke-linecap="round"/>
+            <line x1="90" y1="50" x2="75" y2="50" stroke="#f79c2a" stroke-width="8" stroke-linecap="round"/>
+            <line x1="22" y1="22" x2="33" y2="33" stroke="#a3d9a5" stroke-width="8" stroke-linecap="round"/>
+            <line x1="78" y1="78" x2="67" y2="67" stroke="#eadecd" stroke-width="8" stroke-linecap="round"/>
+            <line x1="22" y1="78" x2="33" y2="67" stroke="#ffda6a" stroke-width="8" stroke-linecap="round"/>
+            <line x1="78" y1="22" x2="67" y2="33" stroke="#f8c8d8" stroke-width="8" stroke-linecap="round"/>
+            <!-- Happy Face -->
+            <circle cx="50" cy="50" r="22" fill="#f79c2a"/>
+            <circle cx="43" cy="45" r="3" fill="#333"/>
+            <circle cx="57" cy="45" r="3" fill="#333"/>
+            <path d="M40 54 Q50 64 60 54" stroke="#e84e1b" stroke-width="3" stroke-linecap="round" fill="none"/>
+        </svg>
+        <svg class="floating-decor cute-star" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 5 L60 40 L95 50 L60 60 L50 95 L40 60 L5 50 L40 40 Z" fill="#ffcb05"/>
+        </svg>
+
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <img decoding="async" src="assets/Floating_Clouds.png" alt="Floating Clouds" class="hero-text-clouds skip-lazy" loading="eager" data-no-lazy="1">
+                    <div class="hero-content-inner">
+                        
+                        <div class="hero-socials-top" style="display: flex; gap: 16px; margin-bottom: 28px; position: relative; z-index: 2;">
+                            <a href="https://www.facebook.com/people/For-Little-People/61577402139390/" target="_blank" class="social-icon" title="Facebook" style="width: 54px; height: 54px;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                            </a>
+                            <a href="https://www.instagram.com/for_little_people?igsh=c2t0NjdrOG5rNGho&utm_source=qr" target="_blank" class="social-icon" title="Instagram" style="width: 54px; height: 54px;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            </a>
+                            <a href="https://www.tiktok.com/@for.little.people?is_from_webapp=1&sender_device=pc" target="_blank" class="social-icon" title="TikTok">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 15.68a6.34 6.34 0 0 0 6.27 6.36 6.34 6.34 0 0 0 6.27-6.36v-6.9a8.16 8.16 0 0 0 4.46 1.34v-3.43a4.78 4.78 0 0 1-2.41-.01z"/></svg>
+                            </a>
+                            <a href="https://www.youtube.com/@for_little_people_sa" target="_blank" class="social-icon" title="YouTube">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                            </a>
+                        </div>
+
+                        <div class="hero-text-slider">
+                            <!-- Slide 0: Christmas Book (First Slide) -->
+                            <div class="hero-text-slide active" id="heroTextSlide0">
+                                <h1>The magic of Christmas lives in every little heart.</h1>
+                                <p class="subheadline">Celebrating love, wonder, and the joyful spirit of togetherness with our Christmas storybook</p>
+                                
+                                <div class="hero-actions">
+                                    <button class="btn btn-primary" onclick="openBook4Modal()">The Perfect Christmas</button>
+                                    <a href="https://www.youtube.com/@for_little_people_sa?sub_confirmation=1" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                                        Watch Animated Stories
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Slide 1: Layla -->
+                            <div class="hero-text-slide" id="heroTextSlide1">
+                                <h1>We are here for the little people with big dreams.</h1>
+                                <p class="subheadline">Fostering creativity, kindness, and independence from an early age</p>
+                                
+                                <div class="hero-actions">
+                                    <button class="btn btn-primary" onclick="toggleModal()">Join our book club</button>
+                                    <a href="https://www.youtube.com/@for_little_people_sa?sub_confirmation=1" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                                        Subscribe to Channel
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2: Bumble the Bee -->
+                            <div class="hero-text-slide" id="heroTextSlide2">
+                                <h1>Every little person has a unique and joyful buzz.</h1>
+                                <p class="subheadline">Celebrating courage, friendship, and discovering the sweet magic of being yourself</p>
+                                
+                                <div class="hero-actions">
+                                    <button class="btn btn-primary" onclick="openBook3Modal()">Meet Bumble the Bee</button>
+                                    <a href="https://www.youtube.com/@for_little_people_sa?sub_confirmation=1" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                                        Watch Animated Stories
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-video-box">
+                    <div class="video-wrapper">
+                        <div class="video-container">
+                            <iframe 
+                                src="https://www.youtube.com/embed/239aUeguorw" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Hero Carousel Navigation Controls & Visual Dots -->
+        <div class="hero-carousel-controls" aria-label="Hero slide navigation">
+            <button type="button" class="hero-arrow-btn" id="heroPrevBtn" onclick="prevHeroSlide()" aria-label="Previous slide" title="Previous slide">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+
+            <div class="hero-dots-group" role="tablist" aria-label="Hero slides">
+                <button type="button" class="hero-dot-btn active" data-slide="0" id="heroDot0" onclick="goToHeroSlide(0)" role="tab" aria-selected="true" aria-label="Jump to Slide 1: Christmas Book" aria-current="true">
+                    <span class="hero-dot-pill"></span>
+                    <span class="hero-dot-text">Christmas</span>
+                </button>
+                <button type="button" class="hero-dot-btn" data-slide="1" id="heroDot1" onclick="goToHeroSlide(1)" role="tab" aria-selected="false" aria-label="Jump to Slide 2: Layla">
+                    <span class="hero-dot-pill"></span>
+                    <span class="hero-dot-text">Layla</span>
+                </button>
+                <button type="button" class="hero-dot-btn" data-slide="2" id="heroDot2" onclick="goToHeroSlide(2)" role="tab" aria-selected="false" aria-label="Jump to Slide 3: Bumble the Bee">
+                    <span class="hero-dot-pill"></span>
+                    <span class="hero-dot-text">Bumble</span>
+                </button>
+            </div>
+
+            <button type="button" class="hero-arrow-btn" id="heroNextBtn" onclick="nextHeroSlide()" aria-label="Next slide" title="Next slide">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Our Story Section -->
+        <section id="our-story" style="background: linear-gradient(135deg, #e87171 0%, #ffb284 100%); position: relative; padding: 100px 0; z-index: 5;">
+            <!-- Floating Decorations -->
+            <svg class="floating-decor decor-1" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 0C54.4 18.5 68.5 32.6 87 37C68.5 41.4 54.4 55.5 50 74C45.6 55.5 31.5 41.4 13 37C31.5 32.6 45.6 18.5 50 0Z" fill="#71c3d9"/>
+            </svg>
+            <svg class="floating-decor decor-2" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="25" fill="#f79c2a"/>
+                <path d="M50 10L50 20M50 80L50 90M10 50L20 50M80 50L90 50M22 22L29 29M71 71L78 78M22 78L29 71M71 22L78 29" stroke="#93cddc" stroke-width="6" stroke-linecap="round"/>
+                <!-- Cute Face -->
+                <circle cx="42" cy="45" r="3" fill="#333"/>
+                <circle cx="58" cy="45" r="3" fill="#333"/>
+                <path d="M42 55Q50 62 58 55" stroke="#e84e1b" stroke-width="3" stroke-linecap="round" fill="none"/>
+            </svg>
+            <svg class="floating-decor decor-3" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M25 0L30 15L45 20L30 25L25 40L20 25L5 20L20 15L25 0Z" fill="#ffcb05"/>
+            </svg>
+
+            <div class="container">
+                <div class="section-header" style="margin-bottom: 64px; position: relative;">
+                    <img decoding="async" src="assets/Floating_Clouds.png" alt="Floating Clouds" class="story-clouds skip-lazy" loading="eager" data-no-lazy="1">
+                    <h2 style="color: var(--text-dark); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 8px; position: relative; z-index: 2;">Our story</h2>
+                    <p style="color: var(--text-dark); opacity: 0.8; font-size: 1.1rem; position: relative; z-index: 2;">A little bit of magic, a lot of love.</p>
+                </div>
+                
+                <div class="story-grid">
+                    <!-- Card 1 -->
+                    <div class="story-card" onclick="openStoryModal()" style="cursor: pointer;" title="Read Our Story">
+                        <div class="story-card-img">
+                            <img decoding="async" src="assets/Baby.jpg" alt="Our story" class="story-photo" loading="lazy" decoding="async" data-no-lazy="1">
+                        </div>
+                        <div class="story-card-content">
+                            <h3 class="story-card-title">Our story</h3>
+                            <span class="story-card-subtitle">We're here for the little ones with big dreams</span>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="story-card" onclick="openMissionModal()" style="cursor: pointer;" title="Read Our Mission & Vision">
+                        <div class="story-card-img" style="background-color: #fdf8e4;">
+                            <img decoding="async" src="assets/final-logo-Trademark-.png" alt="Our mission & vision logo" class="mission-logo skip-lazy" loading="eager" data-no-lazy="1">
+                        </div>
+                        <div class="story-card-content">
+                            <h3 class="story-card-title">Our mission & vision</h3>
+                            <span class="story-card-subtitle">At For Little People, our vision is to create a world where every child feels valued</span>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="story-card" onclick="openDrivesModal()" style="cursor: pointer;" title="Read What Drives Us">
+                        <div class="story-card-img">
+                            <img decoding="async" src="assets/Group1.jpeg" alt="What drives us" class="story-photo boy-photo" loading="lazy" decoding="async" data-no-lazy="1">
+                        </div>
+                        <div class="story-card-content">
+                            <h3 class="story-card-title">What drives us</h3>
+                            <span class="story-card-subtitle">Everything we do is guided by a simple belief: every child deserves the opportunity to thrive.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Four Pillars Section -->
+        <section id="core-pillars" style="background: linear-gradient(135deg, #f5effc 0%, #e3d5f2 100%); position: relative; padding: 100px 0; z-index: 4;">
+            <div class="container">
+                <div class="section-header" style="margin-bottom: 64px; position: relative;">
+                    <img decoding="async" src="assets/Floating_Clouds.png" alt="Floating Clouds" class="heading-clouds-center skip-lazy" style="opacity: 0.6; width: 650px;" loading="eager" data-no-lazy="1">
+                    <h2 style="color: var(--text-dark); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 8px; position: relative; z-index: 2;">Our Four Core Pillars</h2>
+                </div>
+                
+                <div class="pillars-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative; z-index: 2;">
+                    <!-- Pillar 1 -->
+                    <div class="card" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <div style="width: 56px; height: 56px; background-color: #ffb284; border-radius: 16px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; color: #1a1a1a;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        </div>
+                        <h3 style="color: var(--text-dark); margin-bottom: 16px; font-size: 1.35rem;">Family</h3>
+                        <p style="color: var(--text-gray); font-size: 0.95rem; line-height: 1.6;">Family is the foundation of a child's emotional and social development. This pillar focuses on stories and content that celebrate love, connection, respect, and healthy relationships within families. Through relatable characters and everyday experiences, children learn the importance of kindness, communication, and supporting one another.</p>
+                    </div>
+                    <!-- Pillar 2 -->
+                    <div class="card" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <div style="width: 56px; height: 56px; background-color: #abc9d4; border-radius: 16px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; color: #1a1a1a;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        </div>
+                        <h3 style="color: var(--text-dark); margin-bottom: 16px; font-size: 1.35rem;">Self-Reliance</h3>
+                        <p style="color: var(--text-gray); font-size: 0.95rem; line-height: 1.6;">This pillar encourages children to develop independence, confidence, and problem-solving skills. Through empowering stories and lessons, children are guided to trust their abilities, take initiative, and understand that they are capable of overcoming challenges and making positive choices.</p>
+                    </div>
+                    <!-- Pillar 3 -->
+                    <div class="card" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <div style="width: 56px; height: 56px; background-color: #ecd599; border-radius: 16px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; color: #1a1a1a;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg>
+                        </div>
+                        <h3 style="color: var(--text-dark); margin-bottom: 16px; font-size: 1.35rem;">Education</h3>
+                        <p style="color: var(--text-gray); font-size: 0.95rem; line-height: 1.6;">Education is presented as an exciting journey of discovery and growth. This pillar promotes curiosity, learning, creativity, and critical thinking. The content supports children in developing important academic and life skills while nurturing a love for learning that extends beyond the classroom.</p>
+                    </div>
+                    <!-- Pillar 4 -->
+                    <div class="card" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <div style="width: 56px; height: 56px; background-color: #f8c8d8; border-radius: 16px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; color: #1a1a1a;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+                        </div>
+                        <h3 style="color: var(--text-dark); margin-bottom: 16px; font-size: 1.35rem;">Positive self image</h3>
+                        <p style="color: var(--text-gray); font-size: 0.95rem; line-height: 1.6;">Positive self-image focuses on helping children appreciate and value who they are. Through uplifting stories and affirming messages, this pillar teaches children to embrace their uniqueness, build self-confidence, and develop a strong sense of self-worth.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Books Section -->
+        <section id="our-books" style="background: 
+            url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E&quot;),
+            radial-gradient(ellipse at 100% 40%, rgba(100, 168, 160, 0.4) 0%, transparent 60%),
+            linear-gradient(120deg, #dcece3 0%, #c4e0d7 100%);">
+            <div class="container">
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 60px; flex-wrap: wrap;">
+                    <div class="books-intro">
+                        <img decoding="async" src="assets/Floating_Clouds.png" alt="Floating Clouds" class="heading-clouds-left skip-lazy" style="left: -20px;" loading="eager" data-no-lazy="1">
+                        <h2 style="color: var(--text-dark); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 8px; position: relative; z-index: 2;">Our books</h2>
+                        <p style="color: var(--text-gray); position: relative; z-index: 2; font-size: 1.1rem; line-height: 1.7;">Read our books and unlock your imagination</p>
+                        <a href="https://forlittlepeople.co.za/product/book-one/" target="_blank" class="btn btn-primary" style="margin-top: 24px; position: relative; z-index: 2;">Order Now</a>
+                    </div>
+                    <div class="gallery-grid" style="flex: 1; min-width: 300px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; position: relative; z-index: 10;">
+                        <!-- Book 1: The Perfect Christmas (First on the left) -->
+                        <div class="gallery-item" onclick="openBook4Modal()" style="cursor: pointer;" title="Read about The Perfect Christmas">
+                            <img decoding="async" src="assets/ThePerfectChristmas_cover.png" alt="The Perfect Christmas" loading="eager" data-no-lazy="1" class="skip-lazy wp-image-visible book-cover-christmas">
+                        </div>
+                        <!-- Book 2: Hosi and the Whales (Immediately to the right of Christmas book) -->
+                        <div class="gallery-item" onclick="openBook5Modal()" style="cursor: pointer;" title="Read about Hosi and the Whales">
+                            <img decoding="async" src="assets/HosiAndTheWhales_cover.png" alt="Hosi and the Whales" loading="eager" data-no-lazy="1" class="skip-lazy wp-image-visible">
+                        </div>
+                        <!-- Book 2: I Am Beautiful -->
+                        <div class="gallery-item" onclick="openBook1Modal()" style="cursor: pointer;" title="Read about I Am Beautiful">
+                            <img decoding="async" src="assets/Iambeautiful_cover.png" alt="I Am Beautiful" loading="eager" data-no-lazy="1" class="skip-lazy wp-image-visible">
+                        </div>
+                        <!-- Book 3: The Hundred Dresses -->
+                        <div class="gallery-item" onclick="openBook2Modal()" style="cursor: pointer;" title="Read about The Hundred Dresses">
+                            <img decoding="async" src="assets/HundredDresses_cover.png" alt="The Hundred Dresses" loading="eager" data-no-lazy="1" class="skip-lazy wp-image-visible">
+                        </div>
+                        <!-- Book 4: Bumble the Bee -->
+                        <div class="gallery-item" onclick="openBook3Modal()" style="cursor: pointer;" title="Read about BumbleBee">
+                            <img decoding="async" src="assets/BumbleBee_cover.png" alt="BumbleBee" loading="eager" data-no-lazy="1" class="skip-lazy wp-image-visible">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Animations Section -->
+        <section id="our-animations" style="background-color: #fdf8e4; position: relative;">
+            <div class="container">
+                <div class="section-header" style="margin-bottom: 48px; position: relative;">
+                    <img decoding="async" src="assets/Floating_Clouds.png" alt="Floating Clouds" class="heading-clouds-center skip-lazy" loading="eager" data-no-lazy="1">
+                    <h2 style="color: var(--text-dark); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 8px; position: relative; z-index: 2;">Our animations</h2>
+                    <p style="color: var(--text-gray); position: relative; z-index: 2; font-size: 1.1rem;">Watch our stories come to life!</p>
+                </div>
+                
+                <div style="max-width: 800px; margin: 0 auto; position: relative; z-index: 2;">
+                    <div class="video-wrapper">
+                        <div class="video-container">
+                            <iframe 
+                                src="https://www.youtube.com/embed/6ULSAAkcXmI" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More Animations Gallery -->
+                <h3 style="text-align: center; margin-top: 60px; font-size: 1.5rem; color: var(--text-dark); position: relative; z-index: 2;">More from our channel</h3>
+                <div class="video-gallery">
+                    <div class="video-wrapper">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/rKeBjoTQDlc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                    </div>
+                    <div class="video-wrapper">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/QRfK17Z4u74" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                    </div>
+                    <div class="video-wrapper">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/i1XtJr29aLM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 48px; position: relative; z-index: 2;">
+                    <a href="https://youtube.com/@for_little_people_sa?si=_BJ7cRcg-U7UcW7y" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px; font-size: 1.1rem; padding: 14px 32px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                        Visit Our YouTube Channel
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Our News & Media Publications Section -->
+        <section id="our-news" style="background: linear-gradient(135deg, #fff7ee 0%, #fef0ea 50%, #f6eefc 100%); position: relative; padding: 100px 0; z-index: 3;">
+            <!-- Floating Decorations -->
+            <svg class="floating-decor cute-flower" style="top: 8%; left: 4%; width: 70px;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50,0 Q55,40 100,50 Q55,60 50,100 Q45,60 0,50 Q45,40 50,0" fill="#fbc4d4"/>
+                <circle cx="50" cy="50" r="15" fill="#ffd166"/>
+            </svg>
+            <svg class="floating-decor cute-star" style="bottom: 12%; right: 6%; width: 45px;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 5 L60 40 L95 50 L60 60 L50 95 L40 60 L5 50 L40 40 Z" fill="#71c3d9"/>
+            </svg>
+
+            <div class="container">
+                <div class="section-header" style="margin-bottom: 56px; position: relative;">
+                    <img decoding="async" src="assets/Floating_Clouds.png" alt="Floating Clouds" class="heading-clouds-center skip-lazy" loading="eager" data-no-lazy="1">
+                    <h2 style="color: var(--text-dark); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 8px; position: relative; z-index: 2;">Our news</h2>
+                    <p style="color: var(--text-gray); position: relative; z-index: 2; font-size: 1.1rem;">Stories, press features, and media spotlights on For Little People.</p>
+                </div>
+
+                <div class="news-grid">
+                    <!-- Article 1: The Star -->
+                    <article class="news-card" data-article="1">
+                        <div class="news-card-banner">
+                            <img src="assets/news/news_5.jpg" alt="Thabisile Sambo - For Little People in The Star" class="news-card-img" loading="lazy">
+                            <span class="news-tag">
+                                <span>🌟</span> Launch Spotlight
+                            </span>
+                        </div>
+                        <div class="news-card-body">
+                            <div class="news-meta">
+                                <span class="news-outlet">The Star</span>
+                                <span>•</span>
+                                <span>Books &amp; Publishing</span>
+                            </div>
+                            <h3 class="news-title">
+                                <a href="https://thestar.co.za/entertainment/books/2026-04-23-new-childrens-publisher-launches-with-three-essential-books-on-self-worth/" target="_blank" rel="noopener noreferrer">
+                                    New children’s publisher launches with three essential books on self-worth
+                                </a>
+                            </h3>
+                            <p class="news-excerpt">
+                                Children's publisher For Little People makes its retail debut at Exclusive Books with three foundational titles: <em>“I Am Beautiful and So Are You!”</em>, <em>“The Story of Bumble the Bee”</em>, and <em>“The Story of a Hundred Dresses”</em>. Founder Thabisile Sambo shares her vision for cultural representation, confidence, and self-worth.
+                            </p>
+                            <a href="https://thestar.co.za/entertainment/books/2026-04-23-new-childrens-publisher-launches-with-three-essential-books-on-self-worth/" target="_blank" rel="noopener noreferrer" class="news-link">
+                                <span>Read on The Star</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 2: Glamour South Africa -->
+                    <article class="news-card" data-article="2">
+                        <div class="news-card-banner">
+                            <img src="assets/news/glamour_hero.webp" alt="Heritage begins with the stories we tell our children - Glamour" class="news-card-img" loading="lazy">
+                            <span class="news-tag">
+                                <span>✨</span> Culture Feature
+                            </span>
+                        </div>
+                        <div class="news-card-body">
+                            <div class="news-meta">
+                                <span class="news-outlet">Glamour South Africa</span>
+                                <span>•</span>
+                                <span>Lifestyle &amp; Heritage</span>
+                            </div>
+                            <h3 class="news-title">
+                                <a href="https://www.glamour.co.za/lifestyle/heritage-begins-with-the-stories-we-tell-our-children-b0e49352-7dc1-4bbf-8270-dc82e4853591" target="_blank" rel="noopener noreferrer">
+                                    Heritage begins with the stories we tell our children
+                                </a>
+                            </h3>
+                            <p class="news-excerpt">
+                                “When a child recognises their hair, name, family, culture or even something as small as the food they eat in a story, it tells them that they too belong.” Thabisile Sambo discusses why heritage is an everyday collection of memories, and how For Little People puts affirming books into young hands.
+                            </p>
+                            <a href="https://www.glamour.co.za/lifestyle/heritage-begins-with-the-stories-we-tell-our-children-b0e49352-7dc1-4bbf-8270-dc82e4853591" target="_blank" rel="noopener noreferrer" class="news-link">
+                                <span>Read on Glamour</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 3: Sunday World -->
+                    <article class="news-card" data-article="3">
+                        <div class="news-card-banner">
+                            <img src="assets/news/news_2.jpeg" alt="How books can help children learn about heritage - Sunday World" class="news-card-img" loading="lazy">
+                            <span class="news-tag">
+                                <span>📰</span> National Press
+                            </span>
+                        </div>
+                        <div class="news-card-body">
+                            <div class="news-meta">
+                                <span class="news-outlet">Sunday World</span>
+                                <span>•</span>
+                                <span>Culture &amp; Identity</span>
+                            </div>
+                            <h3 class="news-title">
+                                <a href="https://sundayworld.co.za/lifestyle/how-books-can-help-children-learn-about-heritage-culture-and-identity/" target="_blank" rel="noopener noreferrer">
+                                    How books can help children learn about heritage, culture and identity
+                                </a>
+                            </h3>
+                            <p class="news-excerpt">
+                                Before children can explain complex concepts, they learn from the stories they hear. Sunday World features Thabisile Sambo on how books, family conversations, and bedtime traditions help children understand where they come from and celebrate their cultural roots.
+                            </p>
+                            <a href="https://sundayworld.co.za/lifestyle/how-books-can-help-children-learn-about-heritage-culture-and-identity/" target="_blank" rel="noopener noreferrer" class="news-link">
+                                <span>Read on Sunday World</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 4: DRUM / News24 -->
+                    <article class="news-card" data-article="4">
+                        <div class="news-card-banner">
+                            <img src="assets/news/news_2.jpeg" alt="Thabisile Sambo - DRUM News24 Inspiration" class="news-card-img" loading="lazy">
+                            <span class="news-tag">
+                                <span>🎙️</span> Inspiration Spotlight
+                            </span>
+                        </div>
+                        <div class="news-card-body">
+                            <div class="news-meta">
+                                <span class="news-outlet">DRUM / News24</span>
+                                <span>•</span>
+                                <span>Inspiration &amp; Parenting</span>
+                            </div>
+                            <h3 class="news-title">
+                                <a href="https://www.news24.com/drum/inspiration/childrens-book-author-thabisile-sambo-turns-bedtime-stories-into-a-powerful-bonding-session-20260423-0536" target="_blank" rel="noopener noreferrer">
+                                    Children’s book author Thabisile Sambo turns bedtime stories into a powerful bonding session
+                                </a>
+                            </h3>
+                            <p class="news-excerpt">
+                                How a mother's search for inclusive books and toys that authentically mirrored her daughter turned into a movement. DRUM highlights how Thabisile Sambo transformed evening bedtime routines into an inspiring publishing house where children of color are heroes on every page.
+                            </p>
+                            <a href="https://www.news24.com/drum/inspiration/childrens-book-author-thabisile-sambo-turns-bedtime-stories-into-a-powerful-bonding-session-20260423-0536" target="_blank" rel="noopener noreferrer" class="news-link">
+                                <span>Read on DRUM / News24</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 5: The Citizen / Carletonville Herald -->
+                    <article class="news-card" data-article="5">
+                        <div class="news-card-banner">
+                            <img src="assets/news/news_4.jpg" alt="Heritage begins with the stories we tell our children - The Citizen" class="news-card-img" loading="lazy">
+                            <span class="news-tag">
+                                <span>📚</span> Regional Feature
+                            </span>
+                        </div>
+                        <div class="news-card-body">
+                            <div class="news-meta">
+                                <span class="news-outlet">The Citizen / Carletonville Herald</span>
+                                <span>•</span>
+                                <span>Education &amp; Community</span>
+                            </div>
+                            <h3 class="news-title">
+                                <a href="https://www.citizen.co.za/carletonville-herald/news/news-news/2026/09/28/heritage-begins-with-the-stories-we-tell-our-children/" target="_blank" rel="noopener noreferrer">
+                                    Heritage begins with the stories we tell our children
+                                </a>
+                            </h3>
+                            <p class="news-excerpt">
+                                An exploration of how daily storytelling, cultural dress, and representative literature lay the foundation for young minds. Spotlighting For Little People’s interactive titles that teach counting, cultural discovery, and self-confidence across South Africa.
+                            </p>
+                            <a href="https://www.citizen.co.za/carletonville-herald/news/news-news/2026/09/28/heritage-begins-with-the-stories-we-tell-our-children/" target="_blank" rel="noopener noreferrer" class="news-link">
+                                <span>Read on The Citizen</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Media Inquiries Callout -->
+                <div class="news-press-banner">
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--primary-yellow); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0;">
+                            📣
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.15rem; font-weight: 700; color: var(--text-dark); margin-bottom: 4px;">Media &amp; Press Inquiries</h4>
+                            <p style="color: var(--text-gray); font-size: 0.95rem; margin: 0;">Interested in featuring For Little People, interviewing our team, or reviewing our books?</p>
+                        </div>
+                    </div>
+                    <a href="mailto:admin@forlittlepeople.co.za?subject=Press%20%26%20Media%20Inquiry%20-%20For%20Little%20People" class="btn btn-primary" style="padding: 12px 28px !important; font-size: 0.95rem !important;">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="container" style="padding-top: 120px; padding-bottom: 120px;">
+            <div class="section-header" style="margin-bottom: 48px; position: relative;">
+                <img decoding="async" src="assets/Floating_Clouds.png" alt="Floating Clouds" class="heading-clouds-center skip-lazy" loading="eager" data-no-lazy="1">
+                <h2 style="color: var(--text-dark); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 8px; position: relative; z-index: 2;">Contact us</h2>
+                <p style="color: var(--text-gray); position: relative; z-index: 2;">We would love to hear from you!</p>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 600px; margin: 0 auto; position: relative;">
+                <div class="contact-details" style="margin-bottom: 32px; width: 100%; position: relative; z-index: 2;">
+                    <h3 style="margin-bottom: 16px; color: var(--text-dark); font-size: 1.5rem;">Get in touch</h3>
+                    <p style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 1.1rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-yellow-hover);"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <a href="mailto:admin@forlittlepeople.co.za">admin@forlittlepeople.co.za</a>
+                    </p>
+                </div>
+                
+                <h3 style="margin-bottom: 16px; color: var(--text-dark); font-size: 1.5rem; position: relative; z-index: 2;">Follow us</h3>
+                <div class="social-links" style="display: flex; gap: 16px; justify-content: center; position: relative; z-index: 2; margin-bottom: 40px;">
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/people/For-Little-People/61577402139390/" target="_blank" class="social-icon" title="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/for_little_people?igsh=c2t0NjdrOG5rNGho&utm_source=qr" target="_blank" class="social-icon" title="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/@for.little.people?is_from_webapp=1&sender_device=pc" target="_blank" class="social-icon" title="TikTok">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 15.68a6.34 6.34 0 0 0 6.27 6.36 6.34 6.34 0 0 0 6.27-6.36v-6.9a8.16 8.16 0 0 0 4.46 1.34v-3.43a4.78 4.78 0 0 1-2.41-.01z"/></svg>
+                    </a>
+                    <!-- YouTube -->
+                    <a href="https://www.youtube.com/@for_little_people_sa" target="_blank" class="social-icon" title="YouTube">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    </a>
+                </div>
+                
+                <hr style="width: 60%; border: none; border-top: 2px dashed #fbc4d4; margin: 0 auto; opacity: 0.5;">
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--text-dark); color: var(--bg-white); padding: 48px 0; text-align: center;">
+        <div class="container">
+            <h3 style="color: var(--bg-white); margin-bottom: 16px;">For Little People</h3>
+            <p style="color: #888; margin-bottom: 24px;">Fostering creativity, kindness, and independence from an early age</p>
+            <p style="color: #555; font-size: 0.875rem;">&copy; 2026 For Little People. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Story Modal -->
+    <div class="story-modal-overlay" id="storyModal">
+        <div class="story-modal-content">
+            <button class="story-modal-close" onclick="closeStoryModal()">&times;</button>
+            <div class="story-modal-left">
+                <h2>Our story</h2>
+                <p class="lead">We're here for the little ones with big dreams - the kids who dance in the aisles at the supermarket, ask a thousand questions before 9am, and light up every room with their magic.</p>
+                <p>We are a South African publisher creating books and stories that sound like our homes, look like our children, and celebrate the full, beautiful spectrum of who they are. Because our kids deserve to see themselves as heroes, explorers, kings, queens - and just as they are: enough.</p>
+                <p>We started this because we were tired of searching for stories where our children truly belonged. Tired of "diversity" being an afterthought. So we built something bold. Something ours. Something that says:</p>
+                
+                <blockquote>"You matter. You are powerful. You are made for greatness."</blockquote>
+                
+                <p>Our mission? To remind our children of colour - every shade, every curl, every accent - that their stories are worth telling. That joy, pride, and softness live here too. That they are not just part of the future - they are the future.</p>
+                
+                <p style="font-weight: 500; color: #d87659; font-size: 1.1rem; margin-top: 24px;">
+                    This is more than publishing. It's purpose.<br>
+                    It's love on every page.<br>
+                    It's representation with roots.
+                </p>
+                <p style="margin-top: 16px;">
+                    We are loud about it. Proud about it.<br>
+                    <strong style="color: #2d2a26;">We are for little people. Always have been. Always will be.</strong>
+                </p>
+            </div>
+            <div class="story-modal-right">
+                <div class="story-arch full-img-arch">
+                    <img decoding="async" src="assets/Baby.jpg" alt="Our story" loading="lazy" decoding="async" data-no-lazy="1">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mission & Vision Modal -->
+    <div class="story-modal-overlay" id="missionModal">
+        <div class="story-modal-content">
+            <button class="story-modal-close" onclick="closeMissionModal()">&times;</button>
+            <div class="story-modal-left">
+                <h2>Our Mission & Vision</h2>
+                
+                <h3>Our Vision</h3>
+                <p>At For Little People, our vision is to create a world where every child feels valued, supported, and inspired to explore their potential.</p>
+                <p>We believe that the earliest years of life are the foundation for a lifetime of learning, confidence, and creativity. Our goal is to nurture curious minds and compassionate hearts by providing an environment where children feel safe, encouraged, and excited to discover the world around them.</p>
+                <p>Through meaningful experiences, playful exploration, and thoughtful guidance, we aim to help every child grow into a confident, capable individual who is ready to embrace the future.</p>
+                
+                <h3>Our Mission</h3>
+                <p>Our mission is to support the healthy development of young children by creating experiences, resources, and environments that encourage learning, creativity, and emotional growth.</p>
+                <p>We are committed to:</p>
+                <ul class="mission-list">
+                    <li>Nurturing curiosity by encouraging children to explore, ask questions, and learn through play.</li>
+                    <li>Supporting holistic development, including social, emotional, cognitive, and physical growth.</li>
+                    <li>Creating safe and joyful spaces where children feel respected, included, and valued.</li>
+                    <li>Partnering with parents and families to support every child's journey of discovery and development.</li>
+                    <li>Building strong foundations for the future, helping children develop confidence, resilience, and a love for learning.</li>
+                </ul>
+            </div>
+            <div class="story-modal-right">
+                <div class="story-arch mission-arch" style="background-color: #fdf8e4 !important; border-bottom: 12px solid #abc9d4 !important;">
+                    <img decoding="async" src="assets/final-logo-Trademark-.png" alt="Our mission & vision logo" class="skip-lazy" loading="eager" data-no-lazy="1" style="width: 100%; max-width: 220px; height: auto; object-fit: contain; border-radius: 0; box-shadow: none;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- What Drives Us Modal -->
+    <div class="story-modal-overlay" id="drivesModal">
+        <div class="story-modal-content">
+            <button class="story-modal-close" onclick="closeDrivesModal()">&times;</button>
+            <div class="story-modal-left">
+                <h2>What Drives Us</h2>
+                <p class="lead">Everything we do is guided by a simple belief: every child deserves the opportunity to thrive.</p>
+                <p>By fostering creativity, kindness, and independence from an early age, we help lay the groundwork for children to become thoughtful individuals and engaged members of their communities.</p>
+                
+                <p style="font-weight: 500; color: #d87659; font-size: 1.25rem; margin-top: 32px; line-height: 1.6;">
+                    At For Little People, we celebrate the magic of childhood and the limitless possibilities that come with it.
+                </p>
+            </div>
+            <div class="story-modal-right">
+                <div class="story-arch drives-arch full-img-arch">
+                    <img decoding="async" src="assets/Group1.jpeg" alt="What drives us" loading="lazy" decoding="async" data-no-lazy="1">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book 1: I Am Beautiful Modal -->
+    <div class="story-modal-overlay" id="book1Modal">
+        <div class="story-modal-content">
+            <button class="story-modal-close" onclick="closeBook1Modal()">&times;</button>
+            <div class="story-modal-left">
+                <h2>I am Beautiful and So Are You!</h2>
+                <p class="lead">Meet Layla - a bright, bold little girl who knows exactly who she is.</p>
+                <p>She's joyful. She's curious. She's confident.<br>
+                And most of all, she's deeply in love with the skin she's in.</p>
+                <p>Layla doesn't just celebrate her own beauty - she honours the beauty she sees in every child around her.</p>
+                <p>From deep brown to honey gold, coily crowns to soft twists, wide noses to gap-toothed grins - she sees it all, and she sees it as good.</p>
+                
+                <p style="font-weight: 500; color: #d87659; font-size: 1.25rem; margin-top: 32px; line-height: 1.6;">
+                    Because to Layla, different doesn't mean better or worse - it simply means unique.
+                </p>
+                <a href="https://forlittlepeople.co.za/product/book-one/" target="_blank" class="btn btn-primary" style="margin-top: 24px;">Order Now</a>
+            </div>
+            <div class="story-modal-right">
+                <div class="story-arch book1-arch">
+                    <img decoding="async" src="assets/Iambeautiful_cover.png" alt="I Am Beautiful Book Cover" loading="lazy" decoding="async" data-no-lazy="1">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book 2: The Hundred Dresses Modal -->
+    <div class="story-modal-overlay" id="book2Modal">
+        <div class="story-modal-content">
+            <button class="story-modal-close" onclick="closeBook2Modal()">&times;</button>
+            <div class="story-modal-left">
+                <h2>The Story of a Hundred Dresses</h2>
+                <p class="lead">Story of a hundred dresses: This vibrant, interactive book follows Layla as she plays with her animal friends.</p>
+                <p>Designed to engage young readers, it blends early learning with cultural discovery by using the unique patterns and colours of five traditional tribes to teach teaching counting and visual recognition. As children turn the pages, they don't just learn their 123s; they explore the rich heritage of the South African people through beautiful, cultural illustrations.</p>
+                <a href="https://forlittlepeople.co.za/product/the-story-of-a-hundred-dresses/" target="_blank" class="btn btn-primary" style="margin-top: 24px;">Order Now</a>
+            </div>
+            <div class="story-modal-right">
+                <div class="story-arch book2-arch">
+                    <img decoding="async" src="assets/HundredDresses_cover.png" alt="The Hundred Dresses Book Cover" loading="lazy" decoding="async" data-no-lazy="1">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book 3: BumbleBee Modal -->
+    <div class="story-modal-overlay" id="book3Modal">
+        <div class="story-modal-content">
+            <button class="story-modal-close" onclick="closeBook3Modal()">&times;</button>
+            <div class="story-modal-left">
+                <h2>The Story of Bumble the Bee</h2>
+                <p class="lead">This is the tale of Bumble, a little bee who buzzes from friend to friend, searching for fun and laughter.</p>
+                <p>But no matter how hard he tries, things do not quite go as planned. Through his adventures, Bumble learns that being alone does not mean being lonely. Sometimes, the sweetest kind of happiness comes from enjoying your own company, and when you do, others are drawn to your joyful buzz!</p>
+                <p>Bumble's story is a gentle reminder for little readers that joy, confidence, and friendship often begin with learning to enjoy your own company.</p>
+                <p style="font-weight: 500; color: #d87659; font-size: 1.25rem; margin-top: 32px; line-height: 1.6;">
+                    "A buzzing tale about finding joy within!"
+                </p>
+                <a href="https://forlittlepeople.co.za/product/the-story-of-bumble-the-bee/" target="_blank" class="btn btn-primary" style="margin-top: 24px;">Order Now</a>
+            </div>
+            <div class="story-modal-right">
+                <div class="story-arch book3-arch">
+                    <img decoding="async" src="assets/BumbleBee_cover.png" alt="BumbleBee Book Cover" loading="lazy" decoding="async" data-no-lazy="1">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book 4: The Perfect Christmas Modal -->
+    <div class="story-modal-overlay" id="book4Modal">
+        <div class="story-modal-content">
+            <button class="story-modal-close" onclick="closeBook4Modal()">&times;</button>
+            <div class="story-modal-left">
+                <h2>The Perfect Christmas</h2>
+                <p class="lead">A Heartwarming Story of Friendship, Family and Love</p>
+                <p>Christmas is just around the corner, and the excitement is in the air! Join Layla, Mulalo and Jabu as they meet at the park for a fun-filled playdate, sharing their favourite Christmas memories, family traditions and special hopes for the festive season.</p>
+                <p>As the young friends talk about how their families celebrate Christmas, they discover that no two celebrations are exactly alike. From delicious family feasts and exchanging gifts to singing Christmas songs and enjoying precious moments together, each family has its own beautiful way of making Christmas special.</p>
+                <p>Rooted in the warmth and joy of South African family life, this heartwarming story celebrates friendship, diversity and the unique traditions that bring families together. It gently reminds young readers that there is no single way to have the perfect Christmas, because what matters most is being surrounded by the people who love and care for us.</p>
+                <p style="font-weight: 500; color: #d87659; font-size: 1.15rem; margin-top: 24px; line-height: 1.6;">
+                    A delightful festive story that encourages children to appreciate their own family traditions while embracing the beautiful differences that make every Christmas special.
+                </p>
+                <a href="https://forlittlepeople.co.za/product/the-perfect-christmas/" target="_blank" class="btn btn-primary" style="margin-top: 24px;">Order Now</a>
+            </div>
+            <div class="story-modal-right">
+                <div class="story-arch book4-arch">
+                    <img decoding="async" src="assets/ThePerfectChristmas_cover.png" alt="The Perfect Christmas Book Cover" loading="lazy" decoding="async" data-no-lazy="1">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Book 5: Hosi and the Whales Modal -->
+    <div class="story-modal-overlay" id="book5Modal">
+        <div class="story-modal-content">
+            <button class="story-modal-close" onclick="closeBook5Modal()">&times;</button>
+            <div class="story-modal-left">
+                <h2>Hosi and the Whales</h2>
+                <p class="lead">An Inspiring Ocean Adventure of Discovery, Bravery and Marine Wonder</p>
+                <p>Dive into an enchanting ocean journey with Hosi, an adventurous young boy who dreams of the great blue sea! When Hosi sets off on a marvelous marine voyage, he meets gentle giant whales dancing through the waves beneath the sunny South African skies.</p>
+                <p>Together with his majestic ocean friends, Hosi discovers the wondrous beauty of sea creatures, the importance of protecting our oceans, and the bravery found inside every child when exploring the wonders of nature.</p>
+                <p>Brimming with vibrant coastal wonder and joy, this breathtaking tale inspires young hearts to dream big, embrace adventure, and cherish the precious magic of our oceans and marine life.</p>
+                <p style="font-weight: 500; color: #2a82b5; font-size: 1.15rem; margin-top: 24px; line-height: 1.6;">
+                    A breathtaking ocean adventure that encourages children to explore fearlessly, care for our oceans, and discover the wonder within our world.
+                </p>
+                <a href="https://forlittlepeople.co.za/product/hosi-and-the-whales/" target="_blank" class="btn btn-primary" style="margin-top: 24px;">Order Now</a>
+            </div>
+            <div class="story-modal-right">
+                <div class="story-arch book5-arch">
+                    <img decoding="async" src="assets/HosiAndTheWhales_cover.png" alt="Hosi and the Whales Book Cover" loading="lazy" decoding="async" data-no-lazy="1">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Newsletter Modal -->
+    <div class="modal" id="newsModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="toggleModal()">&times;</span>
+            <h2 style="color: var(--text-dark); margin-bottom: 12px;">Join our magic</h2>
+            <p style="color: var(--text-gray);">Subscribe to our book club for updates and early childhood tips.</p>
+            <form onsubmit="handleSubscribe(event)">
+                <input type="email" name="email" placeholder="your@email.com" required>
+                <button type="submit" id="subscribeBtn" class="btn btn-primary" style="width: 100%;">Subscribe Now</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal() {
+            document.getElementById('newsModal').classList.toggle('active');
+        }
+
+        // FormSubmit AJAX handling
+        function handleSubscribe(e) {
+            e.preventDefault();
+            const btn = document.getElementById('subscribeBtn');
+            const originalText = btn.innerText;
+            btn.innerText = 'Subscribing...';
+            btn.disabled = true;
+
+            const email = e.target.querySelector('input[name="email"]').value;
+
+            fetch("https://formsubmit.co/ajax/admin@forlittlepeople.co.za", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    _subject: "Book Club Subscription - For Little People",
+                    email: email
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert("Thank you! You've been subscribed to our magic.");
+                e.target.reset();
+                toggleModal();
+            })
+            .catch(error => {
+                alert("Oops! Something went wrong. Please try again.");
+                console.error(error);
+            })
+            .finally(() => {
+                btn.innerText = originalText;
+                btn.disabled = false;
+            });
+        }
+
+        // Story Modal Functions
+        function openStoryModal() {
+            document.getElementById('storyModal').classList.add('active');
+            document.body.style.overflow = 'hidden'; 
+        }
+        
+        function closeStoryModal() {
+            document.getElementById('storyModal').classList.remove('active');
+            document.body.style.overflow = 'auto'; 
+        }
+
+        // Mission Modal Functions
+        function openMissionModal() {
+            document.getElementById('missionModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMissionModal() {
+            document.getElementById('missionModal').classList.remove('active');
+            document.body.style.overflow = 'auto'; 
+        }
+
+        // Drives Modal Functions
+        function openDrivesModal() {
+            document.getElementById('drivesModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeDrivesModal() {
+            document.getElementById('drivesModal').classList.remove('active');
+            document.body.style.overflow = 'auto'; 
+        }
+
+        // Book 1 Modal Functions
+        function openBook1Modal() {
+            document.getElementById('book1Modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeBook1Modal() {
+            document.getElementById('book1Modal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Book 2 Modal Functions
+        function openBook2Modal() {
+            document.getElementById('book2Modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeBook2Modal() {
+            document.getElementById('book2Modal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Book 3 Modal Functions
+        function openBook3Modal() {
+            document.getElementById('book3Modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeBook3Modal() {
+            document.getElementById('book3Modal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Book 4: The Perfect Christmas Modal Functions
+        function openBook4Modal() {
+            document.getElementById('book4Modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeBook4Modal() {
+            document.getElementById('book4Modal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Book 5: Hosi and the Whales Modal Functions
+        function openBook5Modal() {
+            document.getElementById('book5Modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeBook5Modal() {
+            document.getElementById('book5Modal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modals when clicking outside of the modal content
+        document.getElementById('storyModal').addEventListener('click', function(e) {
+            if (e.target === this) closeStoryModal();
+        });
+        
+        document.getElementById('missionModal').addEventListener('click', function(e) {
+            if (e.target === this) closeMissionModal();
+        });
+        
+        document.getElementById('drivesModal').addEventListener('click', function(e) {
+            if (e.target === this) closeDrivesModal();
+        });
+
+        document.getElementById('book1Modal').addEventListener('click', function(e) {
+            if (e.target === this) closeBook1Modal();
+        });
+
+        document.getElementById('book2Modal').addEventListener('click', function(e) {
+            if (e.target === this) closeBook2Modal();
+        });
+
+        document.getElementById('book3Modal').addEventListener('click', function(e) {
+            if (e.target === this) closeBook3Modal();
+        });
+
+        const b4Overlay = document.getElementById('book4Modal');
+        if (b4Overlay) {
+            b4Overlay.addEventListener('click', function(e) {
+                if (e.target === this) closeBook4Modal();
+            });
+        }
+
+        const b5Overlay = document.getElementById('book5Modal');
+        if (b5Overlay) {
+            b5Overlay.addEventListener('click', function(e) {
+                if (e.target === this) closeBook5Modal();
+            });
+        }
+    
+        // Article Link Click Handler
+        function handleArticleClick(event, element) {
+            const url = element.getAttribute('data-url') || element.getAttribute('href');
+            if (!url || url === '#' || url === '') {
+                event.preventDefault();
+                alert('Publication Link Coming Soon!\nThis publication link will be updated here shortly.');
+            }
+        }
+
+    
+        // --- Mobile Navigation Handlers ---
+        function toggleMobileNav() {
+            const drawer = document.getElementById('mobileNavDrawer');
+            const overlay = document.getElementById('mobileNavOverlay');
+            const burger = document.getElementById('burgerBtn');
+            const isOpen = drawer.classList.contains('active');
+            
+            if (isOpen) {
+                closeMobileNav();
+            } else {
+                drawer.classList.add('active');
+                overlay.classList.add('active');
+                burger.classList.add('active');
+                burger.setAttribute('aria-expanded', 'true');
+                drawer.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeMobileNav() {
+            const drawer = document.getElementById('mobileNavDrawer');
+            const overlay = document.getElementById('mobileNavOverlay');
+            const burger = document.getElementById('burgerBtn');
+            if (drawer) drawer.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+            if (burger) {
+                burger.classList.remove('active');
+                burger.setAttribute('aria-expanded', 'false');
+            }
+            if (drawer) drawer.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = 'auto';
+        }
+
+        function toggleMobileAccordion(id) {
+            const content = document.getElementById(id);
+            if (!content) return;
+            const parent = content.parentElement;
+            parent.classList.toggle('open');
+            const btn = parent.querySelector('.mobile-accordion-toggle');
+            if (btn) {
+                btn.setAttribute('aria-expanded', parent.classList.contains('open') ? 'true' : 'false');
+            }
+        }
+
+        function openStoryModalFromMobile() {
+            closeMobileNav();
+            setTimeout(openStoryModal, 250);
+        }
+
+        function openMissionModalFromMobile() {
+            closeMobileNav();
+            setTimeout(openMissionModal, 250);
+        }
+
+        function openDrivesModalFromMobile() {
+            closeMobileNav();
+            setTimeout(openDrivesModal, 250);
+        }
+
+        function openBook1ModalFromMobile() {
+            closeMobileNav();
+            setTimeout(openBook1Modal, 250);
+        }
+
+        function openBook2ModalFromMobile() {
+            closeMobileNav();
+            setTimeout(openBook2Modal, 250);
+        }
+
+        function openBook3ModalFromMobile() {
+            closeMobileNav();
+            setTimeout(openBook3Modal, 250);
+        }
+
+        function openBook4ModalFromMobile() {
+            closeMobileNav();
+            setTimeout(openBook4Modal, 250);
+        }
+
+        function openBook5ModalFromMobile() {
+            closeMobileNav();
+            setTimeout(openBook5Modal, 250);
+        }
+
+        function toggleModalFromMobile() {
+            closeMobileNav();
+            setTimeout(toggleModal, 250);
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeMobileNav();
+            }
+        });
+
+    
+        // --- Hero Carousel Controller ---
+        let currentHeroSlide = 0;
+        const totalHeroSlides = 3;
+        let heroTimer = null;
+        let isHeroHovered = false;
+        const heroAutoPlayDelay = 8000;
+
+        function goToHeroSlide(index) {
+            currentHeroSlide = (index + totalHeroSlides) % totalHeroSlides;
+            const hero = document.getElementById('hero');
+            if (hero) {
+                hero.setAttribute('data-active-slide', String(currentHeroSlide));
+            }
+
+            // Update text slides
+            const textSlides = document.querySelectorAll('.hero-text-slide');
+            textSlides.forEach((slide, idx) => {
+                if (idx === currentHeroSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+
+            // Update navigation indicator dots
+            const dots = document.querySelectorAll('.hero-dot-btn');
+            dots.forEach((dot) => {
+                const dotSlide = parseInt(dot.getAttribute('data-slide'), 10);
+                if (dotSlide === currentHeroSlide) {
+                    dot.classList.add('active');
+                    dot.setAttribute('aria-selected', 'true');
+                    dot.setAttribute('aria-current', 'true');
+                } else {
+                    dot.classList.remove('active');
+                    dot.setAttribute('aria-selected', 'false');
+                    dot.removeAttribute('aria-current');
+                }
+            });
+
+            // Manage background video playback (Slide 0)
+            const bgVideo = document.querySelector('.hero-christmas-video');
+            if (bgVideo) {
+                if (currentHeroSlide === 0) {
+                    bgVideo.play().catch(() => {});
+                } else {
+                    bgVideo.pause();
+                }
+            }
+
+            // Reset autoplay timer
+            resetHeroTimer();
+        }
+
+        function nextHeroSlide() {
+            goToHeroSlide(currentHeroSlide + 1);
+        }
+
+        function prevHeroSlide() {
+            goToHeroSlide(currentHeroSlide - 1);
+        }
+
+        function resetHeroTimer() {
+            if (heroTimer) clearInterval(heroTimer);
+            if (!isHeroHovered) {
+                heroTimer = setInterval(nextHeroSlide, heroAutoPlayDelay);
+            }
+        }
+
+        // Attach explicitly to window so onclick attributes always resolve immediately
+        window.goToHeroSlide = goToHeroSlide;
+        window.nextHeroSlide = nextHeroSlide;
+        window.prevHeroSlide = prevHeroSlide;
+
+        // Initialize Hero Timer and Event Listeners
+        window.addEventListener('DOMContentLoaded', () => {
+            resetHeroTimer();
+
+            // Wire button click listeners
+            const prevBtn = document.getElementById('heroPrevBtn');
+            const nextBtn = document.getElementById('heroNextBtn');
+            if (prevBtn) {
+                prevBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    prevHeroSlide();
+                });
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    nextHeroSlide();
+                });
+            }
+
+            document.querySelectorAll('.hero-dot-btn').forEach((dot) => {
+                dot.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const slideIdx = parseInt(dot.getAttribute('data-slide'), 10);
+                    if (!isNaN(slideIdx)) {
+                        goToHeroSlide(slideIdx);
+                    }
+                });
+            });
+
+            const heroHeader = document.getElementById('hero');
+            if (heroHeader) {
+                // Pause on hover
+                heroHeader.addEventListener('mouseenter', () => {
+                    isHeroHovered = true;
+                    if (heroTimer) clearInterval(heroTimer);
+                });
+                heroHeader.addEventListener('mouseleave', () => {
+                    isHeroHovered = false;
+                    resetHeroTimer();
+                });
+
+                // Touch swipe support for mobile
+                let touchStartX = 0;
+                heroHeader.addEventListener('touchstart', (e) => {
+                    if (e.changedTouches && e.changedTouches[0]) {
+                        touchStartX = e.changedTouches[0].screenX;
+                    }
+                }, { passive: true });
+
+                heroHeader.addEventListener('touchend', (e) => {
+                    if (e.changedTouches && e.changedTouches[0]) {
+                        const touchEndX = e.changedTouches[0].screenX;
+                        const diff = touchStartX - touchEndX;
+                        if (Math.abs(diff) > 40) {
+                            if (diff > 0) nextHeroSlide();
+                            else prevHeroSlide();
+                        }
+                    }
+                }, { passive: true });
+            }
+
+            // Keyboard navigation (ArrowLeft & ArrowRight)
+            document.addEventListener('keydown', (e) => {
+                const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
+                if (activeTag === 'input' || activeTag === 'textarea') return;
+                if (e.key === 'ArrowRight') nextHeroSlide();
+                if (e.key === 'ArrowLeft') prevHeroSlide();
+            });
+
+            // Battery & Performance Optimization: Pause autoplay & background video when tab is hidden
+            document.addEventListener('visibilitychange', () => {
+                const bgVideo = document.querySelector('.hero-christmas-video');
+                if (document.hidden) {
+                    if (heroTimer) clearInterval(heroTimer);
+                    if (bgVideo) bgVideo.pause();
+                } else {
+                    if (!isHeroHovered) resetHeroTimer();
+                    if (bgVideo && currentHeroSlide === 0) bgVideo.play().catch(() => {});
+                }
+            });
+        });
+
+    </script>
+</div>
+</body>
+</html>
