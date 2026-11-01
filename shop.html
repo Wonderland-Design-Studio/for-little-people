@@ -96,7 +96,7 @@
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 24px;
             align-items: center;
         }
 
@@ -108,12 +108,13 @@
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 500;
-            font-size: 1.05rem;
+            font-size: 1.02rem;
             transition: var(--transition);
             display: inline-flex;
             align-items: center;
             gap: 6px;
             padding: 8px 0;
+            white-space: nowrap;
         }
 
         .nav-links a:hover, .nav-links a.active {
@@ -639,6 +640,13 @@
             grid-template-columns: 1fr 1fr;
             gap: 10px;
             margin-bottom: 10px;
+        }
+
+        .card-action-buttons .btn {
+            padding: 11px 12px;
+            font-size: 0.92rem;
+            white-space: nowrap;
+            gap: 6px;
         }
 
         .card-quick-view-btn {
@@ -1444,24 +1452,42 @@
             }
         }
 
-        // Check for specific book anchor or query parameter in URL
+        // Check for specific book anchor, /product/<slug> path, or query parameter in URL
         document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
-            const bookParam = params.get('book');
+            let bookParam = params.get('book');
             const bundleParam = params.get('bundle');
+            const pathname = window.location.pathname.replace(/\/+$/, '').toLowerCase();
 
-            if (bundleParam === 'true') {
+            if (!bookParam && pathname.startsWith('/product/')) {
+                bookParam = pathname.split('/product/')[1];
+            }
+
+            if (pathname === '/cart') {
+                setTimeout(() => { if (typeof openCartDrawer === 'function') openCartDrawer(); }, 250);
+            } else if (pathname === '/checkout') {
+                setTimeout(() => {
+                    if (typeof openCartDrawer === 'function') openCartDrawer();
+                    if (typeof showCheckoutView === 'function') showCheckoutView();
+                }, 250);
+            }
+
+            if (bundleParam === 'true' || bookParam === 'complete-bundle-5') {
                 const bundleCard = document.getElementById('card-bundle');
                 if (bundleCard) {
                     bundleCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    bundleCard.style.boxShadow = '0 0 0 4px #ffdb70, 0 20px 40px rgba(0,0,0,0.15)';
                 }
             } else if (bookParam) {
                 const cardMap = {
                     'the-perfect-christmas': 'card-christmas',
                     'hosi-and-the-whales': 'card-hosi',
                     'i-am-beautiful': 'card-beautiful',
+                    'i-am-beautiful-and-so-are-you': 'card-beautiful',
                     'the-hundred-dresses': 'card-dresses',
-                    'bumble-the-bee': 'card-bumble'
+                    'the-story-of-a-hundred-dresses': 'card-dresses',
+                    'bumble-the-bee': 'card-bumble',
+                    'the-story-of-bumble-the-bee': 'card-bumble'
                 };
                 const cardId = cardMap[bookParam];
                 if (cardId) {

@@ -7,10 +7,15 @@
     RewriteEngine On
     RewriteBase /
 
-    # Route /shop and /shop/ to shop.html
-    RewriteRule ^shop/?$ shop.html [L,QSA]
-    RewriteRule ^store/?$ shop.html [L,QSA]
-    RewriteRule ^bookshop/?$ shop.html [L,QSA]
+    # Normalize sub-route relative asset requests (e.g. /shop/assets/foo.png or /product/slug/assets/foo.png)
+    RewriteRule ^.+/(assets/.*)$ $1 [L]
+
+    # Route legacy WordPress upload paths to /assets/
+    RewriteRule ^wp-content/uploads/(?:\d{4}/\d{2}/)?([^/]+?)(?:-\d+x\d+)?(\.[a-zA-Z0-9]+)$ assets/$1$2 [L]
+
+    # Route /shop, /store, /bookshop, /cart, /checkout, and /product/* to shop.html
+    RewriteRule ^(shop|store|bookshop|cart|checkout)/?$ shop.html [L,QSA]
+    RewriteRule ^product/[^/]+/?$ shop.html [L,QSA]
 </IfModule>
 
 # 2. UTF-8 Encoding

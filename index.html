@@ -47,10 +47,7 @@
         }
 
         /* Content Visibility for Instant First Contentful Paint */
-        #our-story, #core-pillars, #our-animations, #our-news, footer {
-            content-visibility: auto;
-            contain-intrinsic-size: 1px 700px;
-        }
+        /* All sections rendered eagerly for instant image display */
 
         /* Hardware Acceleration for Smooth Animations */
         .hero-christmas-chars, .hero-layla, .hero-bee, .floating-decor, .hero-video-box {
@@ -199,24 +196,25 @@
 
     .nav-links {
         display: flex;
-        gap: 16px;
+        gap: 6px;
         align-items: center;
     }
 
     .nav-item {
         position: relative;
-        padding: 20px 8px;
+        padding: 20px 2px;
     }
 
     #flp-app-wrapper .nav-item > a {
         font-weight: 500 !important;
-        font-size: 1rem !important; 
-        padding: 10px 24px !important; 
+        font-size: 0.96rem !important; 
+        padding: 10px 14px !important; 
         border-radius: var(--border-radius-pill) !important;
         transition: var(--transition-bouncy);
         position: relative;
         cursor: pointer;
         display: inline-block;
+        white-space: nowrap;
     }
 
     .nav-item:hover > a {
@@ -965,9 +963,9 @@
     
     #flp-app-wrapper .gallery-item img {
         transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        width: 85% !important;
-        height: 85% !important;
-        max-width: 85% !important;
+        width: 94% !important;
+        height: 94% !important;
+        max-width: 94% !important;
         object-fit: contain !important;
         background: transparent !important;
         background-color: transparent !important;
@@ -1163,8 +1161,8 @@
     /* Books Section specific classes */
     .books-intro {
         position: relative;
-        flex: 1;
-        min-width: 300px;
+        flex: 0 1 320px;
+        min-width: 280px;
         text-align: left;
     }
 
@@ -2093,7 +2091,7 @@
                                 title="YouTube video player" 
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                allowfullscreen loading="lazy">
+                                allowfullscreen loading="eager">
                             </iframe>
                         </div>
                     </div>
@@ -2158,7 +2156,7 @@
                     <!-- Card 1 -->
                     <div class="story-card" onclick="openStoryModal()" style="cursor: pointer;" title="Read Our Story">
                         <div class="story-card-img">
-                            <img decoding="async" src="assets/Baby.jpg" alt="Our story" class="story-photo" loading="lazy" decoding="async" data-no-lazy="1">
+                            <img decoding="async" src="assets/Baby.jpg" alt="Our story" class="story-photo" loading="eager" decoding="async" data-no-lazy="1">
                         </div>
                         <div class="story-card-content">
                             <h3 class="story-card-title">Our story</h3>
@@ -2178,7 +2176,7 @@
                     <!-- Card 3 -->
                     <div class="story-card" onclick="openDrivesModal()" style="cursor: pointer;" title="Read What Drives Us">
                         <div class="story-card-img">
-                            <img decoding="async" src="assets/Group1.jpeg" alt="What drives us" class="story-photo boy-photo" loading="lazy" decoding="async" data-no-lazy="1">
+                            <img decoding="async" src="assets/Group1.jpeg" alt="What drives us" class="story-photo boy-photo" loading="eager" decoding="async" data-no-lazy="1">
                         </div>
                         <div class="story-card-content">
                             <h3 class="story-card-title">What drives us</h3>
@@ -2250,7 +2248,7 @@
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
   </a>
                     </div>
-                    <div class="gallery-grid" style="flex: 1; min-width: 300px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; position: relative; z-index: 10;">
+                    <div class="gallery-grid" style="flex: 1.8; min-width: 320px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; position: relative; z-index: 10;">
                         <!-- Book 1: The Perfect Christmas (First on the left) -->
                         <div class="gallery-item" onclick="openBook4Modal()" style="cursor: pointer;" title="Read about The Perfect Christmas">
                             <img decoding="async" src="assets/ThePerfectChristmas_cover.png" alt="The Perfect Christmas" loading="eager" data-no-lazy="1" class="skip-lazy wp-image-visible book-cover-christmas">
@@ -2293,7 +2291,7 @@
                                 title="YouTube video player" 
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                allowfullscreen loading="lazy">
+                                allowfullscreen loading="eager">
                             </iframe>
                         </div>
                     </div>
@@ -2304,17 +2302,17 @@
                 <div class="video-gallery">
                     <div class="video-wrapper">
                         <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/rKeBjoTQDlc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                            <iframe src="https://www.youtube.com/embed/rKeBjoTQDlc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="eager"></iframe>
                         </div>
                     </div>
                     <div class="video-wrapper">
                         <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/QRfK17Z4u74" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                            <iframe src="https://www.youtube.com/embed/QRfK17Z4u74" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="eager"></iframe>
                         </div>
                     </div>
                     <div class="video-wrapper">
                         <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/i1XtJr29aLM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                            <iframe src="https://www.youtube.com/embed/i1XtJr29aLM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="eager"></iframe>
                         </div>
                     </div>
                 </div>
@@ -2351,7 +2349,7 @@
                     <!-- Article 1: The Star -->
                     <article class="news-card" data-article="1">
                         <div class="news-card-banner">
-                            <img src="assets/news/news_5.jpg" alt="Thabisile Sambo - For Little People in The Star" class="news-card-img" loading="lazy">
+                            <img src="assets/news/news_5.jpg" alt="Thabisile Sambo - For Little People in The Star" class="news-card-img" loading="eager">
                             <span class="news-tag">
                                 <span>🌟</span> Launch Spotlight
                             </span>
@@ -2380,7 +2378,7 @@
                     <!-- Article 2: Glamour South Africa -->
                     <article class="news-card" data-article="2">
                         <div class="news-card-banner">
-                            <img src="assets/news/glamour_hero.webp" alt="Heritage begins with the stories we tell our children - Glamour" class="news-card-img" loading="lazy">
+                            <img src="assets/news/glamour_hero.webp" alt="Heritage begins with the stories we tell our children - Glamour" class="news-card-img" loading="eager">
                             <span class="news-tag">
                                 <span>✨</span> Culture Feature
                             </span>
@@ -2409,7 +2407,7 @@
                     <!-- Article 3: Sunday World -->
                     <article class="news-card" data-article="3">
                         <div class="news-card-banner">
-                            <img src="assets/news/news_2.jpeg" alt="How books can help children learn about heritage - Sunday World" class="news-card-img" loading="lazy">
+                            <img src="assets/news/news_2.jpeg" alt="How books can help children learn about heritage - Sunday World" class="news-card-img" loading="eager">
                             <span class="news-tag">
                                 <span>📰</span> National Press
                             </span>
@@ -2438,7 +2436,7 @@
                     <!-- Article 4: DRUM / News24 -->
                     <article class="news-card" data-article="4">
                         <div class="news-card-banner">
-                            <img src="assets/news/news_2.jpeg" alt="Thabisile Sambo - DRUM News24 Inspiration" class="news-card-img" loading="lazy">
+                            <img src="assets/news/news_2.jpeg" alt="Thabisile Sambo - DRUM News24 Inspiration" class="news-card-img" loading="eager">
                             <span class="news-tag">
                                 <span>🎙️</span> Inspiration Spotlight
                             </span>
@@ -2467,7 +2465,7 @@
                     <!-- Article 5: The Citizen / Carletonville Herald -->
                     <article class="news-card" data-article="5">
                         <div class="news-card-banner">
-                            <img src="assets/news/news_4.jpg" alt="Heritage begins with the stories we tell our children - The Citizen" class="news-card-img" loading="lazy">
+                            <img src="assets/news/news_4.jpg" alt="Heritage begins with the stories we tell our children - The Citizen" class="news-card-img" loading="eager">
                             <span class="news-tag">
                                 <span>📚</span> Regional Feature
                             </span>
@@ -2588,7 +2586,7 @@
             </div>
             <div class="story-modal-right">
                 <div class="story-arch full-img-arch">
-                    <img decoding="async" src="assets/Baby.jpg" alt="Our story" loading="lazy" decoding="async" data-no-lazy="1">
+                    <img decoding="async" src="assets/Baby.jpg" alt="Our story" loading="eager" decoding="async" data-no-lazy="1">
                 </div>
             </div>
         </div>
@@ -2640,7 +2638,7 @@
             </div>
             <div class="story-modal-right">
                 <div class="story-arch drives-arch full-img-arch">
-                    <img decoding="async" src="assets/Group1.jpeg" alt="What drives us" loading="lazy" decoding="async" data-no-lazy="1">
+                    <img decoding="async" src="assets/Group1.jpeg" alt="What drives us" loading="eager" decoding="async" data-no-lazy="1">
                 </div>
             </div>
         </div>
@@ -2674,7 +2672,7 @@
             </div>
             <div class="story-modal-right">
                 <div class="story-arch book1-arch">
-                    <img decoding="async" src="assets/Iambeautiful_cover.png" alt="I Am Beautiful Book Cover" loading="lazy" decoding="async" data-no-lazy="1">
+                    <img decoding="async" src="assets/Iambeautiful_cover.png" alt="I Am Beautiful Book Cover" loading="eager" decoding="async" data-no-lazy="1">
                 </div>
             </div>
         </div>
@@ -2701,7 +2699,7 @@
             </div>
             <div class="story-modal-right">
                 <div class="story-arch book2-arch">
-                    <img decoding="async" src="assets/HundredDresses_cover.png" alt="The Hundred Dresses Book Cover" loading="lazy" decoding="async" data-no-lazy="1">
+                    <img decoding="async" src="assets/HundredDresses_cover.png" alt="The Hundred Dresses Book Cover" loading="eager" decoding="async" data-no-lazy="1">
                 </div>
             </div>
         </div>
@@ -2732,7 +2730,7 @@
             </div>
             <div class="story-modal-right">
                 <div class="story-arch book3-arch">
-                    <img decoding="async" src="assets/BumbleBee_cover.png" alt="BumbleBee Book Cover" loading="lazy" decoding="async" data-no-lazy="1">
+                    <img decoding="async" src="assets/BumbleBee_cover.png" alt="BumbleBee Book Cover" loading="eager" decoding="async" data-no-lazy="1">
                 </div>
             </div>
         </div>
@@ -2764,7 +2762,7 @@
             </div>
             <div class="story-modal-right">
                 <div class="story-arch book4-arch">
-                    <img decoding="async" src="assets/ThePerfectChristmas_cover.png" alt="The Perfect Christmas Book Cover" loading="lazy" decoding="async" data-no-lazy="1">
+                    <img decoding="async" src="assets/ThePerfectChristmas_cover.png" alt="The Perfect Christmas Book Cover" loading="eager" decoding="async" data-no-lazy="1">
                 </div>
             </div>
         </div>
@@ -2797,7 +2795,7 @@
             </div>
             <div class="story-modal-right">
                 <div class="story-arch book5-arch">
-                    <img decoding="async" src="assets/HosiAndTheWhales_cover.png" alt="Hosi and the Whales Book Cover" loading="lazy" decoding="async" data-no-lazy="1">
+                    <img decoding="async" src="assets/HosiAndTheWhales_cover.png" alt="Hosi and the Whales Book Cover" loading="eager" decoding="async" data-no-lazy="1">
                 </div>
             </div>
         </div>
