@@ -52,6 +52,10 @@ const server = http.createServer((req, res) => {
     const parsedUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
     let reqPath = decodeURIComponent(parsedUrl.pathname);
 
+    if (reqPath === '/shop' || reqPath === '/shop/' || reqPath === '/store' || reqPath === '/store/') {
+      reqPath = '/shop.html';
+    }
+
     if (reqPath === '/' || reqPath === '') {
       reqPath = '/index.html';
     }

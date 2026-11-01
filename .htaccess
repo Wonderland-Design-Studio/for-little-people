@@ -2,11 +2,22 @@
 # For Little People - cPanel Production .htaccess
 # ----------------------------------------------------------------------
 
-# 1. UTF-8 Encoding
+# 1. URL Rewrite Rules
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Route /shop and /shop/ to shop.html
+    RewriteRule ^shop/?$ shop.html [L,QSA]
+    RewriteRule ^store/?$ shop.html [L,QSA]
+    RewriteRule ^bookshop/?$ shop.html [L,QSA]
+</IfModule>
+
+# 2. UTF-8 Encoding
 AddDefaultCharset UTF-8
 AddCharset UTF-8 .html .css .js .json .svg
 
-# 2. Proper MIME Types
+# 3. Proper MIME Types
 <IfModule mod_mime.c>
     AddType video/mp4 .mp4
     AddType image/webp .webp
@@ -15,7 +26,7 @@ AddCharset UTF-8 .html .css .js .json .svg
     AddType font/woff .woff
 </IfModule>
 
-# 3. Gzip / Deflate Compression
+# 4. Gzip / Deflate Compression
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
     AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
@@ -23,7 +34,7 @@ AddCharset UTF-8 .html .css .js .json .svg
     AddOutputFilterByType DEFLATE image/svg+xml font/ttf font/otf
 </IfModule>
 
-# 4. Browser Caching (Cache-Control & Expires)
+# 5. Browser Caching (Cache-Control & Expires)
 <IfModule mod_expires.c>
     ExpiresActive On
     ExpiresDefault "access plus 1 month"
@@ -58,7 +69,7 @@ AddCharset UTF-8 .html .css .js .json .svg
     </FilesMatch>
 </IfModule>
 
-# 5. Enable HTTP Byte-Ranges (Video Streaming for hero & animations)
+# 6. Enable HTTP Byte-Ranges (Video Streaming for hero & animations)
 <IfModule mod_headers.c>
     Header set Accept-Ranges bytes
 </IfModule>
